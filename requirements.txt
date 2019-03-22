@@ -1,0 +1,6 @@
+google-cloud
+google-cloud-translate
+google-api-python-client
+PyHamcrest
+python-dotenv
+google
