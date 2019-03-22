@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 
 import os
-
+import io
 import google.oauth2.credentials
 from dotenv import load_dotenv
-load_dotenv()
-
 import google_auth_oauthlib.flow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from google_auth_oauthlib.flow import InstalledAppFlow
+import json
+import pprint
+# import oauth2client
+# from oauth2client.client import GoogleCredentials
+from google.oauth2 import service_account
+import pickle
+
+load_dotenv()
 
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
@@ -24,13 +30,38 @@ API_VERSION = 'v3'
 
 
 def get_authenticated_service():
-    flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
-    credentials = flow.run_console()
-    return build(API_SERVICE_NAME, API_VERSION, credentials=credentials)
-
-
-def print_response(response):
-    print(response)
+    if os.path.isfile('credentials.bin'):
+        credentials = pickle.load(io.open('credentials.bin', 'rb'))
+        return build(API_SERVICE_NAME, API_VERSION, credentials=credentials)
+    elif os.path.isfile('-credentials.json'):
+        fp = io.open('credentials.json', 'r')
+        print(fp)
+        data = json.load(fp)
+        pprint.pprint(data)
+        credentials = service_account.Credentials(
+            None,
+            refresh_token=data['refresh_token'],
+            id_token=data['id_token'],
+            token_uri=data['token_uri'],
+            client_id=data['client_id'],
+            client_secret=data['client_secret'],
+            # scopes=data['scopes']
+        )
+        return build(API_SERVICE_NAME, API_VERSION, credentials=credentials)
+    else:
+        flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS_FILE, SCOPES)
+        credentials = flow.run_console()
+        pprint.pprint({
+            'refresh_token': credentials.refresh_token,
+            'token_uri': credentials.token_uri,
+            'id_token': credentials.id_token,
+            'client_id': credentials.client_id,
+            'client_secret': credentials.client_secret,
+            'requires_scopes': credentials.requires_scopes,
+        })
+        pickle.dump(credentials, io.open('credentials.bin', 'wb'))
+        return build(API_SERVICE_NAME, API_VERSION, credentials=credentials)
+        # return build(API_SERVICE_NAME, API_VERSION, developerKey=os.getenv('GOOGLE_API_KEY'))
 
 
 # Build a resource based on a list of properties given as key-value pairs.
@@ -79,7 +110,7 @@ def build_resource(properties):
 def remove_empty_kwargs(**kwargs):
     good_kwargs = {}
     if kwargs is not None:
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             if value:
                 good_kwargs[key] = value
     return good_kwargs
@@ -94,6 +125,20 @@ def captions_list(client, **kwargs):
     ).execute()
 
     return print_response(response)
+
+
+def print_response(response):
+    # data = json.loads(response)
+    data = response
+    for item in data['items']:
+        pprint.pprint(item)
+        if item['snippet']['language'] == 'en':
+            text = client.captions().download(
+                id=item['id'],
+                onBehalfOfContentOwner='',
+                tfmt='srt'
+            ).execute()
+            print(text)
 
 
 if __name__ == '__main__':
