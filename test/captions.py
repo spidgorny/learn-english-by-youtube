@@ -131,11 +131,13 @@ def print_response(response):
     # data = json.loads(response)
     data = response
     for item in data['items']:
-        pprint.pprint(item)
+        # pprint.pprint(item)
         if item['snippet']['language'] == 'en':
+            pprint.pprint(item)
+            snippet_id = item['id']
+            print('snippet_id {}'.format(snippet_id))
             text = client.captions().download(
-                id=item['id'],
-                onBehalfOfContentOwner='',
+                id = snippet_id,
                 tfmt='srt'
             ).execute()
             print(text)
@@ -149,5 +151,4 @@ if __name__ == '__main__':
 
     captions_list(client,
                   part='snippet',
-                  videoId='M7FIvfx5J10',
-                  onBehalfOfContentOwner='')
+                  videoId='3zJHwOwirjA')
