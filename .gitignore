@@ -7,3 +7,5 @@ tasks.xml
 *.iml
 credentials.json
 credentials.bin
+.idea/
+vendor/

@@ -13,6 +13,8 @@
 		"php-di/php-di": "6.0.8",
 		"mashape/unirest-php": "2.6.1",
 		"ext-simplexml": "*",
-		"nlp-tools/nlp-tools": "1.0.x-dev"
+		"nlp-tools/nlp-tools": "1.0.x-dev",
+		"vlucas/phpdotenv": "3.2.x-dev",
+		"danielstjules/stringy": "3.1.0"
 	}
 }
