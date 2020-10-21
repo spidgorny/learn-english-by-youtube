@@ -1,20 +1,31 @@
 {
-	"name": "spidgorny/learn-english-by-youtube",
-	"description": "description_text",
-	"minimum-stability": "dev",
-	"license": "proprietary",
-	"authors": [
-		{
-			"name": "Slawa",
-			"email": "spidgorny@gmail.com"
-		}
-	],
-	"require": {
-		"php-di/php-di": "6.0.8",
-		"mashape/unirest-php": "2.6.1",
-		"ext-simplexml": "*",
-		"nlp-tools/nlp-tools": "1.0.x-dev",
-		"vlucas/phpdotenv": "3.2.x-dev",
-		"danielstjules/stringy": "3.1.0"
-	}
+  "name": "spidgorny/learn-english-by-youtube",
+  "description": "description_text",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Slawa",
+      "email": "spidgorny@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "pipeline": "php src/pipeline.php",
+    "oxford": "python test/oxford.py"
+  },
+  "require": {
+    "ext-simplexml": "*",
+    "danielstjules/stringy": "3.1.0",
+    "jwage/purl": "^1.0@dev",
+    "mashape/unirest-php": "2.6.1",
+    "nlp-tools/nlp-tools": "1.0.x-dev",
+    "php-di/php-di": "6.0.8",
+    "vlucas/phpdotenv": "3.2.x-dev"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
 }
