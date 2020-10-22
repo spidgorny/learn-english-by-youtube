@@ -4,6 +4,11 @@ import FetchWords from "./FetchWords";
 export default class App extends React.Component {
 
 	refURL: React.Ref<HTMLInputElement>;
+	state: {
+		player: any;
+	} = {
+		player: undefined,
+	};
 
 	constructor(props: any) {
 		super(props);
@@ -25,24 +30,21 @@ export default class App extends React.Component {
 		const firstScriptTag = document.getElementsByTagName('script')[0] as HTMLScriptElement;
 		firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
 
-		// 3. This function creates an <iframe> (and YouTube player)
-		//    after the API code downloads.
-		let player: any;
-
 		const onYouTubeIframeAPIReady = () => {
 			// @ts-ignore
-			player = new YT.Player('player', {
-				height: '390',
-				width: '640',
+			const player = new YT.Player('player', {
 				videoId: this.youtubeID,
 				events: {
 					'onReady': onPlayerReady,
 					'onStateChange': onPlayerStateChange
 				}
 			});
+			this.setState({
+				player,
+			});
 		}
 		// @ts-ignore
-		window['onYouTubeIframeAPIReady'] = onYouTubeIframeAPIReady;
+		window['onYouTubeIframeAPIReady'] = onYouTubeIframeAPIReady.bind(this);
 
 		// 4. The API will call this function when the video player is ready.
 		function onPlayerReady(event: any) {
@@ -58,13 +60,13 @@ export default class App extends React.Component {
 			// @ts-ignore
 			let playing = YT.PlayerState.PLAYING;
 			if (event.data === playing && !done) {
-				setTimeout(stopVideo, 6000);
+				setTimeout(stopVideo, 16000);
 				done = true;
 			}
 		}
 
-		function stopVideo() {
-			player.stopVideo();
+		const stopVideo = () => {
+			this.state.player.stopVideo();
 		}
 	}
 
@@ -103,7 +105,7 @@ export default class App extends React.Component {
 					<div className="" style={{
 						flexBasis: '25%',
 					}}>
-						<FetchWords youtubeID={this.youtubeID}/>
+						<FetchWords youtubeID={this.youtubeID} player={this.state.player}/>
 					</div>
 				</main>
 			</>
