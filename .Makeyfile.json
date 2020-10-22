@@ -1,0 +1,21 @@
+{
+  "sequence": {
+    "command-sequence0": [
+      "shell-command0",
+      "shell-command1"
+    ],
+    "command-sequence1": [
+      "command-sequence0",
+      "python-command1",
+      "shell-command0"
+    ]
+  },
+  "python": {
+    "python-command0": "some.module0.callable_code",
+    "python-command1": "some.module1.callable_code"
+  },
+  "shell": {
+    "pipeline": "php src/pipeline.php",
+    "shell-command1": "run-something-else --with flags"
+  }
+}

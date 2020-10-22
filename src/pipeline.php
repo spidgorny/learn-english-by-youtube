@@ -92,7 +92,7 @@ function filterCommonWords($text)
  * @return mixed
  * @throws Exception
  */
-function translateRare(array $rare)
+function translateRareYandex(array $rare)
 {
 	$yandex = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' .
 		http_build_query([
@@ -116,6 +116,17 @@ function translateRare(array $rare)
 		next($translation);
 	}
 	return $rare;
+}
+
+function translateRare(array $rare)
+{
+    foreach ($rare as $en => &$trans) {
+        $cmd = 'python test/pons.py ' . $en;
+        echo '> ', $cmd, PHP_EOL;
+        $trans = exec($cmd);
+        echo '< ', $trans, PHP_EOL;
+    }
+    return $rare;
 }
 
 main();
