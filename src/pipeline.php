@@ -9,7 +9,7 @@ define('TAB', "\t");
 
 require_once __DIR__ . '/../vendor/autoload.php';
 \Dotenv\Dotenv::create(__DIR__ . '/..')->load();
-echo 'Yandex Key: ', getenv('YANDEX_KEY'), PHP_EOL;
+#echo 'Yandex Key: ', getenv('YANDEX_KEY'), PHP_EOL;
 if (!getenv('YANDEX_KEY')) {
 	throw new Exception('.env yandex key missing');
 }
@@ -17,6 +17,7 @@ if (!getenv('YANDEX_KEY')) {
 function main()
 {
 	$youtubeLink = 'https://youtube.com/watch?v=zzfCVBSsvqA';
+	$youtubeLink = 'https://youtube.com/watch?v=njKP3FqW3Sk';
 	$url = new Url($youtubeLink);
 	$ccLink = 'http://video.google.com/timedtext?lang=en&v=' . $url->query->get('v');
 	echo $ccLink, PHP_EOL;
@@ -118,7 +119,7 @@ function translateRareYandex(array $rare)
 	return $rare;
 }
 
-function translateRare(array $rare)
+function translateRareCMD(array $rare)
 {
     foreach ($rare as $en => &$trans) {
         $cmd = 'python test/pons.py ' . $en;
@@ -126,6 +127,21 @@ function translateRare(array $rare)
         $trans = exec($cmd);
         echo '< ', $trans, PHP_EOL;
     }
+    return $rare;
+}
+
+function translateRare(array $rare)
+{
+    foreach ($rare as $en => &$trans) {
+        echo '.';
+        $url = 'http://127.0.0.1:5000/pons?word=' . urlencode($en);
+        $response = Unirest\Request::get($url);
+//        echo 'Code: ', $response->code, PHP_EOL;
+//        print_r($response->headers);
+//        print_r($response->body);
+        $trans = strip_tags($response->body->trans);
+    }
+    echo PHP_EOL;
     return $rare;
 }
 

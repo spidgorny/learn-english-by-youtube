@@ -33,7 +33,6 @@ def pons():
         'status': "ok",
         'word': word,
         'trans': trans,
-        'translation': "asd"
     })
 
 
