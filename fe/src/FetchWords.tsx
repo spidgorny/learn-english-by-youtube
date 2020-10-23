@@ -1,4 +1,5 @@
 import React from "react";
+import Tokenizer from "./Tokenizer";
 
 const parser = require('xml2json-light');
 
@@ -16,10 +17,15 @@ export default class FetchWords extends React.Component<any, any> {
 		error: undefined | string;
 		playTime: number;
 		transcript: Transcript[];
+		words: {
+			source: string;
+			translation: string;
+		}[],
 	} = {
 		error: undefined,
 		playTime: 0,
 		transcript: [],
+		words: [],
 	};
 
 	componentDidMount() {
@@ -56,6 +62,15 @@ export default class FetchWords extends React.Component<any, any> {
 		const json = parser.xml2json(xml);
 		this.setState({
 			transcript: json.transcript.text,
+		});
+		this.tokenize(json.transcript.text);
+	}
+
+	async tokenize(text: Transcript[]) {
+		const t = new Tokenizer(text.map(line => line['_@ttribute']));
+		const terms = await t.getTerms();
+		this.setState({
+			words: terms,
 		});
 	}
 

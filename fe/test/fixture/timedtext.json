@@ -1,0 +1,4211 @@
+{
+	"wireMagic": "pb3",
+	"pens": [
+		{
+		}
+	],
+	"wsWinStyles": [
+		{
+		}
+	],
+	"wpWinPositions": [
+		{
+		}
+	],
+	"events": [
+		{
+			"tStartMs": 10349,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "JEFF POSNICK: Hey, everybody."
+				}
+			]
+		},
+		{
+			"tStartMs": 11349,
+			"dDurationMs": 2681,
+			"segs": [
+				{
+					"utf8": "Welcome to this week's show of\nYouTube Developers Live."
+				}
+			]
+		},
+		{
+			"tStartMs": 14030,
+			"dDurationMs": 2150,
+			"segs": [
+				{
+					"utf8": "I'm Jeff Posnick coming to\nyou from New York City."
+				}
+			]
+		},
+		{
+			"tStartMs": 16180,
+			"dDurationMs": 3240,
+			"segs": [
+				{
+					"utf8": "I'm a member of the Developer\nRelations team."
+				}
+			]
+		},
+		{
+			"tStartMs": 19420,
+			"dDurationMs": 2070,
+			"segs": [
+				{
+					"utf8": "And this week I'm really excited\nto talk to you about"
+				}
+			]
+		},
+		{
+			"tStartMs": 21490,
+			"dDurationMs": 3050,
+			"segs": [
+				{
+					"utf8": "different ways of customizing\nthe YouTube-embedded player."
+				}
+			]
+		},
+		{
+			"tStartMs": 24540,
+			"dDurationMs": 3489,
+			"segs": [
+				{
+					"utf8": "Before I get started though, I\nwant a couple of ground rules"
+				}
+			]
+		},
+		{
+			"tStartMs": 28029,
+			"dDurationMs": 3510,
+			"segs": [
+				{
+					"utf8": "to just talk about what we're\ngoing to be covering in"
+				}
+			]
+		},
+		{
+			"tStartMs": 31539,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "today's show."
+				}
+			]
+		},
+		{
+			"tStartMs": 32539,
+			"dDurationMs": 1860,
+			"segs": [
+				{
+					"utf8": "There are a lot of different\nembedded players, and there's"
+				}
+			]
+		},
+		{
+			"tStartMs": 34399,
+			"dDurationMs": 2401,
+			"segs": [
+				{
+					"utf8": "lots of ways to customize\nthem."
+				}
+			]
+		},
+		{
+			"tStartMs": 36800,
+			"dDurationMs": 3120,
+			"segs": [
+				{
+					"utf8": "But for this particular show,\nwe're going to be focusing on"
+				}
+			]
+		},
+		{
+			"tStartMs": 39920,
+			"dDurationMs": 5250,
+			"segs": [
+				{
+					"utf8": "customizing be iframe-embedded\nplayer, which is our current"
+				}
+			]
+		},
+		{
+			"tStartMs": 45170,
+			"dDurationMs": 3529,
+			"segs": [
+				{
+					"utf8": "recommended way of embedding\nvideos on web pages."
+				}
+			]
+		},
+		{
+			"tStartMs": 48699,
+			"dDurationMs": 1520,
+			"segs": [
+				{
+					"utf8": "And we're going to specifically\nfocus on the"
+				}
+			]
+		},
+		{
+			"tStartMs": 50219,
+			"dDurationMs": 4680,
+			"segs": [
+				{
+					"utf8": "options that are most relevant\nfor desktop web browsers."
+				}
+			]
+		},
+		{
+			"tStartMs": 54899,
+			"dDurationMs": 3271,
+			"segs": [
+				{
+					"utf8": "A lot of these customization\noptions we'll talk about do"
+				}
+			]
+		},
+		{
+			"tStartMs": 58170,
+			"dDurationMs": 3989,
+			"segs": [
+				{
+					"utf8": "have some effect with mobile\nbrowser playback, but not all"
+				}
+			]
+		},
+		{
+			"tStartMs": 62159,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "of them do."
+				}
+			]
+		},
+		{
+			"tStartMs": 63159,
+			"dDurationMs": 3341,
+			"segs": [
+				{
+					"utf8": "And we're going to just focus\ntoday on how these options"
+				}
+			]
+		},
+		{
+			"tStartMs": 66500,
+			"dDurationMs": 2100,
+			"segs": [
+				{
+					"utf8": "affect desktop playback."
+				}
+			]
+		},
+		{
+			"tStartMs": 68600,
+			"dDurationMs": 2280,
+			"segs": [
+				{
+					"utf8": "Another thing that we're not\ngoing to be covering today is"
+				}
+			]
+		},
+		{
+			"tStartMs": 70880,
+			"dDurationMs": 4220,
+			"segs": [
+				{
+					"utf8": "using the JavaScript API for\ncontrolling playback."
+				}
+			]
+		},
+		{
+			"tStartMs": 75100,
+			"dDurationMs": 1740,
+			"segs": [
+				{
+					"utf8": "This is obviously a very\ninteresting topic and a very"
+				}
+			]
+		},
+		{
+			"tStartMs": 76840,
+			"dDurationMs": 1920,
+			"segs": [
+				{
+					"utf8": "important topic, it's just a\nlittle bit outside the scope"
+				}
+			]
+		},
+		{
+			"tStartMs": 78760,
+			"dDurationMs": 1770,
+			"segs": [
+				{
+					"utf8": "of what we wanted\nto talk about."
+				}
+			]
+		},
+		{
+			"tStartMs": 80530,
+			"dDurationMs": 2610,
+			"segs": [
+				{
+					"utf8": "So we're not going to be\ncovering any of the methods"
+				}
+			]
+		},
+		{
+			"tStartMs": 83140,
+			"dDurationMs": 2140,
+			"segs": [
+				{
+					"utf8": "that you could use in JavaScript\nto start playback"
+				}
+			]
+		},
+		{
+			"tStartMs": 85280,
+			"dDurationMs": 4090,
+			"segs": [
+				{
+					"utf8": "or control playback, or receive\nevents when playback"
+				}
+			]
+		},
+		{
+			"tStartMs": 89370,
+			"dDurationMs": 1910,
+			"segs": [
+				{
+					"utf8": "changes happen in the player."
+				}
+			]
+		},
+		{
+			"tStartMs": 91280,
+			"dDurationMs": 2549,
+			"segs": [
+				{
+					"utf8": "What we are going to be covering\nis things that are"
+				}
+			]
+		},
+		{
+			"tStartMs": 93829,
+			"dDurationMs": 4210,
+			"segs": [
+				{
+					"utf8": "covered in the documentation\non the specific page, so if"
+				}
+			]
+		},
+		{
+			"tStartMs": 98039,
+			"dDurationMs": 3281,
+			"segs": [
+				{
+					"utf8": "you pull that up, we'll\nshare that with you."
+				}
+			]
+		},
+		{
+			"tStartMs": 101320,
+			"dDurationMs": 3439,
+			"segs": [
+				{
+					"utf8": "And as I'm going through this\ndemo, a lot of what I'm going"
+				}
+			]
+		},
+		{
+			"tStartMs": 104759,
+			"dDurationMs": 2500,
+			"segs": [
+				{
+					"utf8": "to be covering refers to\nspecific web pages."
+				}
+			]
+		},
+		{
+			"tStartMs": 107259,
+			"dDurationMs": 2991,
+			"segs": [
+				{
+					"utf8": "When we go back and post this\nvideo on YouTube, I'll have"
+				}
+			]
+		},
+		{
+			"tStartMs": 110250,
+			"dDurationMs": 2369,
+			"segs": [
+				{
+					"utf8": "annotations linking to all the\nweb pages, so that you could"
+				}
+			]
+		},
+		{
+			"tStartMs": 112619,
+			"dDurationMs": 4331,
+			"segs": [
+				{
+					"utf8": "go there and check them\nout yourself."
+				}
+			]
+		},
+		{
+			"tStartMs": 116950,
+			"dDurationMs": 3959,
+			"segs": [
+				{
+					"utf8": "So this is our main jumping off\npoint for talking about"
+				}
+			]
+		},
+		{
+			"tStartMs": 120909,
+			"dDurationMs": 2151,
+			"segs": [
+				{
+					"utf8": "the customization that\nyou could do to the"
+				}
+			]
+		},
+		{
+			"tStartMs": 123060,
+			"dDurationMs": 3530,
+			"segs": [
+				{
+					"utf8": "YouTube-embedded\niframe player."
+				}
+			]
+		},
+		{
+			"tStartMs": 126590,
+			"dDurationMs": 3320,
+			"segs": [
+				{
+					"utf8": "And you could get here from\nour main Developers.Googl"
+				}
+			]
+		},
+		{
+			"tStartMs": 129910,
+			"dDurationMs": 3170,
+			"segs": [
+				{
+					"utf8": "e.com/YouTubedocumentation."
+				}
+			]
+		},
+		{
+			"tStartMs": 133080,
+			"dDurationMs": 4391,
+			"segs": [
+				{
+					"utf8": "And everything in this parameter\nsection in the docks"
+				}
+			]
+		},
+		{
+			"tStartMs": 137471,
+			"dDurationMs": 3489,
+			"segs": [
+				{
+					"utf8": "is fair game for what we're\ngoing to talk about now."
+				}
+			]
+		},
+		{
+			"tStartMs": 140960,
+			"dDurationMs": 3370,
+			"segs": [
+				{
+					"utf8": "One other thing before I\nactually get into explaining"
+				}
+			]
+		},
+		{
+			"tStartMs": 144330,
+			"dDurationMs": 2420,
+			"segs": [
+				{
+					"utf8": "these parameters is explain\nthe two different types of"
+				}
+			]
+		},
+		{
+			"tStartMs": 146750,
+			"dDurationMs": 4260,
+			"segs": [
+				{
+					"utf8": "ways that you can load the\niframe-embedded player onto"
+				}
+			]
+		},
+		{
+			"tStartMs": 151010,
+			"dDurationMs": 1780,
+			"segs": [
+				{
+					"utf8": "your web page."
+				}
+			]
+		},
+		{
+			"tStartMs": 152790,
+			"dDurationMs": 2790,
+			"segs": [
+				{
+					"utf8": "And we're kind of agnostic as\nto the way in which you load"
+				}
+			]
+		},
+		{
+			"tStartMs": 155580,
+			"dDurationMs": 1830,
+			"segs": [
+				{
+					"utf8": "it, these parameters are going\nto behave the same way"
+				}
+			]
+		},
+		{
+			"tStartMs": 157410,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "regardless."
+				}
+			]
+		},
+		{
+			"tStartMs": 158410,
+			"dDurationMs": 1980,
+			"segs": [
+				{
+					"utf8": "But I just wanted to point out\nthat there are two different"
+				}
+			]
+		},
+		{
+			"tStartMs": 160390,
+			"dDurationMs": 2130,
+			"segs": [
+				{
+					"utf8": "ways of doing it."
+				}
+			]
+		},
+		{
+			"tStartMs": 162520,
+			"dDurationMs": 5560,
+			"segs": [
+				{
+					"utf8": "The first way is using the\niframes kind of like YouTube"
+				}
+			]
+		},
+		{
+			"tStartMs": 168080,
+			"dDurationMs": 1640,
+			"segs": [
+				{
+					"utf8": "player, YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 169720,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "Player constructor."
+				}
+			]
+		},
+		{
+			"tStartMs": 170720,
+			"dDurationMs": 2500,
+			"segs": [
+				{
+					"utf8": "And this is a more programmatic\nway of loading"
+				}
+			]
+		},
+		{
+			"tStartMs": 173220,
+			"dDurationMs": 1710,
+			"segs": [
+				{
+					"utf8": "the iframe player onto\nyour web page."
+				}
+			]
+		},
+		{
+			"tStartMs": 174930,
+			"dDurationMs": 3120,
+			"segs": [
+				{
+					"utf8": "So I have this jsFiddle right\nhere that demonstrates what"
+				}
+			]
+		},
+		{
+			"tStartMs": 178050,
+			"dDurationMs": 1740,
+			"segs": [
+				{
+					"utf8": "that will look like."
+				}
+			]
+		},
+		{
+			"tStartMs": 179790,
+			"dDurationMs": 4190,
+			"segs": [
+				{
+					"utf8": "It basically involves loading\nin this JavaScript API and"
+				}
+			]
+		},
+		{
+			"tStartMs": 183980,
+			"dDurationMs": 1100,
+			"segs": [
+				{
+					"utf8": "calling the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 185080,
+			"dDurationMs": 3060,
+			"segs": [
+				{
+					"utf8": "Player constructor, and passing\nin the ID of a div"
+				}
+			]
+		},
+		{
+			"tStartMs": 188140,
+			"dDurationMs": 2350,
+			"segs": [
+				{
+					"utf8": "that's on your page."
+				}
+			]
+		},
+		{
+			"tStartMs": 190490,
+			"dDurationMs": 3110,
+			"segs": [
+				{
+					"utf8": "And you'll see here that there\nis this playerVars section"
+				}
+			]
+		},
+		{
+			"tStartMs": 193600,
+			"dDurationMs": 1890,
+			"segs": [
+				{
+					"utf8": "that you could pass\nin to the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 195490,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "Player constructors."
+				}
+			]
+		},
+		{
+			"tStartMs": 196490,
+			"dDurationMs": 2990,
+			"segs": [
+				{
+					"utf8": "So this is where you get to\nspecify all the options that"
+				}
+			]
+		},
+		{
+			"tStartMs": 199480,
+			"dDurationMs": 2170,
+			"segs": [
+				{
+					"utf8": "we're going to be covering today\nif you're using the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 201650,
+			"dDurationMs": 1510,
+			"segs": [
+				{
+					"utf8": "PLayer constructor."
+				}
+			]
+		},
+		{
+			"tStartMs": 203160,
+			"dDurationMs": 3910,
+			"segs": [
+				{
+					"utf8": "And just quickly jumping over\nhere, this is where I stole"
+				}
+			]
+		},
+		{
+			"tStartMs": 207070,
+			"dDurationMs": 3150,
+			"segs": [
+				{
+					"utf8": "that code from in our Getting\nStarted guide"
+				}
+			]
+		},
+		{
+			"tStartMs": 210220,
+			"dDurationMs": 2550,
+			"segs": [
+				{
+					"utf8": "for the iframe API."
+				}
+			]
+		},
+		{
+			"tStartMs": 212770,
+			"dDurationMs": 4160,
+			"segs": [
+				{
+					"utf8": "We talk about how you could\nactually get that code."
+				}
+			]
+		},
+		{
+			"tStartMs": 216930,
+			"dDurationMs": 3270,
+			"segs": [
+				{
+					"utf8": "So feel free to borrow it there\nor from that jsFiddle."
+				}
+			]
+		},
+		{
+			"tStartMs": 220200,
+			"dDurationMs": 1750,
+			"segs": [
+				{
+					"utf8": "The second way that you load\nthe iframe player onto your"
+				}
+			]
+		},
+		{
+			"tStartMs": 221950,
+			"dDurationMs": 3420,
+			"segs": [
+				{
+					"utf8": "page is just with a simple\niframe tag that you could add"
+				}
+			]
+		},
+		{
+			"tStartMs": 225370,
+			"dDurationMs": 2370,
+			"segs": [
+				{
+					"utf8": "to any web page."
+				}
+			]
+		},
+		{
+			"tStartMs": 227740,
+			"dDurationMs": 2840,
+			"segs": [
+				{
+					"utf8": "And this has the same sort of\nparameters that the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 230580,
+			"dDurationMs": 1690,
+			"segs": [
+				{
+					"utf8": "Player constructor is,\nkind under the hood."
+				}
+			]
+		},
+		{
+			"tStartMs": 232270,
+			"dDurationMs": 2480,
+			"segs": [
+				{
+					"utf8": "They really end up creating\nthe same thing."
+				}
+			]
+		},
+		{
+			"tStartMs": 234750,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "Just that the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 235750,
+			"dDurationMs": 3050,
+			"segs": [
+				{
+					"utf8": "Player constructor is a\nprogrammatic way of creating"
+				}
+			]
+		},
+		{
+			"tStartMs": 238800,
+			"dDurationMs": 2040,
+			"segs": [
+				{
+					"utf8": "this tag using JavaScript."
+				}
+			]
+		},
+		{
+			"tStartMs": 240840,
+			"dDurationMs": 2020,
+			"segs": [
+				{
+					"utf8": "This is if you're just writing\nout [? initiable ?]"
+				}
+			]
+		},
+		{
+			"tStartMs": 242860,
+			"dDurationMs": 3200,
+			"segs": [
+				{
+					"utf8": "template, or even if you're not\na JavaScript programmer at"
+				}
+			]
+		},
+		{
+			"tStartMs": 246060,
+			"dDurationMs": 3650,
+			"segs": [
+				{
+					"utf8": "all and just want to include\nsome HTML on your page, you"
+				}
+			]
+		},
+		{
+			"tStartMs": 249710,
+			"dDurationMs": 2720,
+			"segs": [
+				{
+					"utf8": "could use this tag."
+				}
+			]
+		},
+		{
+			"tStartMs": 252430,
+			"dDurationMs": 3160,
+			"segs": [
+				{
+					"utf8": "And the same parameters we are\ngoing to be talking about can"
+				}
+			]
+		},
+		{
+			"tStartMs": 255590,
+			"dDurationMs": 3750,
+			"segs": [
+				{
+					"utf8": "go at the very end of the URL\nthat you use as a source of"
+				}
+			]
+		},
+		{
+			"tStartMs": 259340,
+			"dDurationMs": 1079,
+			"segs": [
+				{
+					"utf8": "the iframe tag."
+				}
+			]
+		},
+		{
+			"tStartMs": 260419,
+			"dDurationMs": 2761,
+			"segs": [
+				{
+					"utf8": "So over here we have autoplay\nequals 0 and"
+				}
+			]
+		},
+		{
+			"tStartMs": 263180,
+			"dDurationMs": 1959,
+			"segs": [
+				{
+					"utf8": "controls equals 0."
+				}
+			]
+		},
+		{
+			"tStartMs": 265139,
+			"dDurationMs": 4671,
+			"segs": [
+				{
+					"utf8": "And that corresponds to what\nwe're seeing over here for the"
+				}
+			]
+		},
+		{
+			"tStartMs": 269810,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "playerVars."
+				}
+			]
+		},
+		{
+			"tStartMs": 270810,
+			"dDurationMs": 5330,
+			"segs": [
+				{
+					"utf8": "And the actual documentation for\nusing that iframe tag is"
+				}
+			]
+		},
+		{
+			"tStartMs": 276140,
+			"dDurationMs": 2110,
+			"segs": [
+				{
+					"utf8": "found over here."
+				}
+			]
+		},
+		{
+			"tStartMs": 278250,
+			"dDurationMs": 5870,
+			"segs": [
+				{
+					"utf8": "If you look in the docs over\nhere, we give some examples."
+				}
+			]
+		},
+		{
+			"tStartMs": 284120,
+			"dDurationMs": 3810,
+			"segs": [
+				{
+					"utf8": "So that's the ground rules for\nhow you actually will use"
+				}
+			]
+		},
+		{
+			"tStartMs": 287930,
+			"dDurationMs": 1171,
+			"segs": [
+				{
+					"utf8": "these parameters that\nwe are going to be"
+				}
+			]
+		},
+		{
+			"tStartMs": 289101,
+			"dDurationMs": 3119,
+			"segs": [
+				{
+					"utf8": "describing in your own code."
+				}
+			]
+		},
+		{
+			"tStartMs": 292220,
+			"dDurationMs": 2680,
+			"segs": [
+				{
+					"utf8": "So I just wanted to run through\npretty much from the"
+				}
+			]
+		},
+		{
+			"tStartMs": 294900,
+			"dDurationMs": 2070,
+			"segs": [
+				{
+					"utf8": "top, all these parameters\nhere."
+				}
+			]
+		},
+		{
+			"tStartMs": 296970,
+			"dDurationMs": 3690,
+			"segs": [
+				{
+					"utf8": "We do have really nice\nexplanations what they mean in"
+				}
+			]
+		},
+		{
+			"tStartMs": 300660,
+			"dDurationMs": 1030,
+			"segs": [
+				{
+					"utf8": "the documentation."
+				}
+			]
+		},
+		{
+			"tStartMs": 301690,
+			"dDurationMs": 4220,
+			"segs": [
+				{
+					"utf8": "So it's going to be a little bit\nrepetitive in some cases."
+				}
+			]
+		},
+		{
+			"tStartMs": 305910,
+			"dDurationMs": 2640,
+			"segs": [
+				{
+					"utf8": "But I did want to highlight some\nspecific ones that are"
+				}
+			]
+		},
+		{
+			"tStartMs": 308550,
+			"dDurationMs": 1030,
+			"segs": [
+				{
+					"utf8": "the most useful."
+				}
+			]
+		},
+		{
+			"tStartMs": 309580,
+			"dDurationMs": 4180,
+			"segs": [
+				{
+					"utf8": "So autohide comes in\nhandy quite a bit."
+				}
+			]
+		},
+		{
+			"tStartMs": 313760,
+			"dDurationMs": 4200,
+			"segs": [
+				{
+					"utf8": "This is something that controls\nthe behavior of the"
+				}
+			]
+		},
+		{
+			"tStartMs": 317960,
+			"dDurationMs": 3441,
+			"segs": [
+				{
+					"utf8": "controls, more or less, that\nare on the bottom of the"
+				}
+			]
+		},
+		{
+			"tStartMs": 321401,
+			"dDurationMs": 1539,
+			"segs": [
+				{
+					"utf8": "YouTube Player."
+				}
+			]
+		},
+		{
+			"tStartMs": 322940,
+			"dDurationMs": 3530,
+			"segs": [
+				{
+					"utf8": "It's not necessarily the initial\nstate of the controls,"
+				}
+			]
+		},
+		{
+			"tStartMs": 326470,
+			"dDurationMs": 2130,
+			"segs": [
+				{
+					"utf8": "but it's more like what happens\nthe controls once"
+				}
+			]
+		},
+		{
+			"tStartMs": 328600,
+			"dDurationMs": 2190,
+			"segs": [
+				{
+					"utf8": "playback starts."
+				}
+			]
+		},
+		{
+			"tStartMs": 330790,
+			"dDurationMs": 3040,
+			"segs": [
+				{
+					"utf8": "And I'm going to demonstrate\nthe ways of setting those"
+				}
+			]
+		},
+		{
+			"tStartMs": 333830,
+			"dDurationMs": 3850,
+			"segs": [
+				{
+					"utf8": "different values by going to\nthis page over here, which is"
+				}
+			]
+		},
+		{
+			"tStartMs": 337680,
+			"dDurationMs": 1980,
+			"segs": [
+				{
+					"utf8": "our YouTube player demo."
+				}
+			]
+		},
+		{
+			"tStartMs": 339660,
+			"dDurationMs": 3010,
+			"segs": [
+				{
+					"utf8": "So this is another really\ngreat resource."
+				}
+			]
+		},
+		{
+			"tStartMs": 342670,
+			"dDurationMs": 4660,
+			"segs": [
+				{
+					"utf8": "And it's an alternative to\nwriting this code over here or"
+				}
+			]
+		},
+		{
+			"tStartMs": 347330,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "writing this in jsFiddle."
+				}
+			]
+		},
+		{
+			"tStartMs": 348330,
+			"dDurationMs": 3480,
+			"segs": [
+				{
+					"utf8": "It's just a way to play around\nwith these parameters in a"
+				}
+			]
+		},
+		{
+			"tStartMs": 351810,
+			"dDurationMs": 2600,
+			"segs": [
+				{
+					"utf8": "live setting."
+				}
+			]
+		},
+		{
+			"tStartMs": 354410,
+			"dDurationMs": 2800,
+			"segs": [
+				{
+					"utf8": "And we can think of it like our\nAPI explorer, if you've"
+				}
+			]
+		},
+		{
+			"tStartMs": 357210,
+			"dDurationMs": 3340,
+			"segs": [
+				{
+					"utf8": "ever used that for\nour data APIs."
+				}
+			]
+		},
+		{
+			"tStartMs": 360550,
+			"dDurationMs": 3350,
+			"segs": [
+				{
+					"utf8": "This is the equivalent\nfor our player APIs."
+				}
+			]
+		},
+		{
+			"tStartMs": 363900,
+			"dDurationMs": 3070,
+			"segs": [
+				{
+					"utf8": "So what it lets you do is go\nover here on the right and"
+				}
+			]
+		},
+		{
+			"tStartMs": 366970,
+			"dDurationMs": 2740,
+			"segs": [
+				{
+					"utf8": "start choosing different values\nfor the parameters."
+				}
+			]
+		},
+		{
+			"tStartMs": 369710,
+			"dDurationMs": 1860,
+			"segs": [
+				{
+					"utf8": "And I'm not going to do this\nfor every single parameter"
+				}
+			]
+		},
+		{
+			"tStartMs": 371570,
+			"dDurationMs": 3430,
+			"segs": [
+				{
+					"utf8": "that we didn't talk about, but\njust to show you how you could"
+				}
+			]
+		},
+		{
+			"tStartMs": 375000,
+			"dDurationMs": 1910,
+			"segs": [
+				{
+					"utf8": "experiment in real time\nwithout having"
+				}
+			]
+		},
+		{
+			"tStartMs": 376910,
+			"dDurationMs": 1320,
+			"segs": [
+				{
+					"utf8": "to write any code."
+				}
+			]
+		},
+		{
+			"tStartMs": 378230,
+			"dDurationMs": 3010,
+			"segs": [
+				{
+					"utf8": "Let me just try setting autohide\nto 0 over here."
+				}
+			]
+		},
+		{
+			"tStartMs": 381240,
+			"dDurationMs": 2810,
+			"segs": [
+				{
+					"utf8": "I'm going to click\nUpdate Player."
+				}
+			]
+		},
+		{
+			"tStartMs": 384050,
+			"dDurationMs": 4670,
+			"segs": [
+				{
+					"utf8": "And once I set it,\nBegin Playback."
+				}
+			]
+		},
+		{
+			"tStartMs": 388720,
+			"dDurationMs": 2440,
+			"segs": [
+				{
+					"utf8": "This is a very old video."
+				}
+			]
+		},
+		{
+			"tStartMs": 391160,
+			"dDurationMs": 2920,
+			"segs": [
+				{
+					"utf8": "Actually, part of what I plan\non doing is replacing the"
+				}
+			]
+		},
+		{
+			"tStartMs": 394080,
+			"dDurationMs": 3150,
+			"segs": [
+				{
+					"utf8": "default video that we use in\nthis demo with this video, so"
+				}
+			]
+		},
+		{
+			"tStartMs": 397230,
+			"dDurationMs": 2450,
+			"segs": [
+				{
+					"utf8": "we'll have a very meta\nexperience, if you happen to"
+				}
+			]
+		},
+		{
+			"tStartMs": 399680,
+			"dDurationMs": 2820,
+			"segs": [
+				{
+					"utf8": "be watching this while on the\ndemo page trying out these"
+				}
+			]
+		},
+		{
+			"tStartMs": 402500,
+			"dDurationMs": 1610,
+			"segs": [
+				{
+					"utf8": "parameters."
+				}
+			]
+		},
+		{
+			"tStartMs": 404110,
+			"dDurationMs": 2920,
+			"segs": [
+				{
+					"utf8": "So the main thing to keep in\nmind though is that the"
+				}
+			]
+		},
+		{
+			"tStartMs": 407030,
+			"dDurationMs": 1530,
+			"segs": [
+				{
+					"utf8": "controls at the bottom\nover here did not"
+				}
+			]
+		},
+		{
+			"tStartMs": 408560,
+			"dDurationMs": 2640,
+			"segs": [
+				{
+					"utf8": "disappear during playback."
+				}
+			]
+		},
+		{
+			"tStartMs": 411200,
+			"dDurationMs": 5450,
+			"segs": [
+				{
+					"utf8": "And if I were to go over here\nand change the autohide to 1,"
+				}
+			]
+		},
+		{
+			"tStartMs": 416650,
+			"dDurationMs": 1050,
+			"segs": [
+				{
+					"utf8": "Update Player--"
+				}
+			]
+		},
+		{
+			"tStartMs": 417700,
+			"dDurationMs": 5390,
+			"segs": [
+				{
+					"utf8": "it says, loading in the player\nwith the parameters--"
+				}
+			]
+		},
+		{
+			"tStartMs": 423090,
+			"dDurationMs": 2780,
+			"segs": [
+				{
+					"utf8": "you'll see that when I mouse\nover, the controls are there."
+				}
+			]
+		},
+		{
+			"tStartMs": 425870,
+			"dDurationMs": 2250,
+			"segs": [
+				{
+					"utf8": "When I move the mouse away,\nthe controls disappear."
+				}
+			]
+		},
+		{
+			"tStartMs": 428120,
+			"dDurationMs": 5030,
+			"segs": [
+				{
+					"utf8": "So for experiences where you\nwant maybe a more of lean-back"
+				}
+			]
+		},
+		{
+			"tStartMs": 433150,
+			"dDurationMs": 2280,
+			"segs": [
+				{
+					"utf8": "type of situation, where people\naren't going to be"
+				}
+			]
+		},
+		{
+			"tStartMs": 435430,
+			"dDurationMs": 1880,
+			"segs": [
+				{
+					"utf8": "interacting with the controls,\nor you don't want the controls"
+				}
+			]
+		},
+		{
+			"tStartMs": 437310,
+			"dDurationMs": 4400,
+			"segs": [
+				{
+					"utf8": "to overlay the video playback,\nit's a very useful parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 441710,
+			"dDurationMs": 3322,
+			"segs": [
+				{
+					"utf8": "Autoplay is next on the\nlist alphabetically."
+				}
+			]
+		},
+		{
+			"tStartMs": 445032,
+			"dDurationMs": 2328,
+			"segs": [
+				{
+					"utf8": "Somewhat self-explanatory, if\nyou add in the autoplay"
+				}
+			]
+		},
+		{
+			"tStartMs": 447360,
+			"dDurationMs": 4059,
+			"segs": [
+				{
+					"utf8": "parameter, then the video will\nstart playing back as soon as"
+				}
+			]
+		},
+		{
+			"tStartMs": 451419,
+			"dDurationMs": 3351,
+			"segs": [
+				{
+					"utf8": "the iframe embed is loaded\non the page."
+				}
+			]
+		},
+		{
+			"tStartMs": 454770,
+			"dDurationMs": 3420,
+			"segs": [
+				{
+					"utf8": "I'll give a quick demo\nof that over here."
+				}
+			]
+		},
+		{
+			"tStartMs": 458190,
+			"dDurationMs": 5290,
+			"segs": [
+				{
+					"utf8": "And this time, instead of using\nthe player demo page,"
+				}
+			]
+		},
+		{
+			"tStartMs": 463480,
+			"dDurationMs": 2820,
+			"segs": [
+				{
+					"utf8": "I'm going to use that jsFiddle\nthat we have set up."
+				}
+			]
+		},
+		{
+			"tStartMs": 466300,
+			"dDurationMs": 2130,
+			"segs": [
+				{
+					"utf8": "And I'm going to just change\nthe autoplay value to 1."
+				}
+			]
+		},
+		{
+			"tStartMs": 468430,
+			"dDurationMs": 1940,
+			"segs": [
+				{
+					"utf8": "I'm going to click Run."
+				}
+			]
+		},
+		{
+			"tStartMs": 470370,
+			"dDurationMs": 2320,
+			"segs": [
+				{
+					"utf8": "And you could see,\nhere's the embed."
+				}
+			]
+		},
+		{
+			"tStartMs": 472690,
+			"dDurationMs": 3120,
+			"segs": [
+				{
+					"utf8": "It started playing as soon\nas the page loads."
+				}
+			]
+		},
+		{
+			"tStartMs": 475810,
+			"dDurationMs": 1960,
+			"segs": [
+				{
+					"utf8": "So there are certain scenarios\nwhere that's useful, certain"
+				}
+			]
+		},
+		{
+			"tStartMs": 477770,
+			"dDurationMs": 1220,
+			"segs": [
+				{
+					"utf8": "scenarios where it's not."
+				}
+			]
+		},
+		{
+			"tStartMs": 478990,
+			"dDurationMs": 3530,
+			"segs": [
+				{
+					"utf8": "You have to use your judgment\nas to whether autoplaying is"
+				}
+			]
+		},
+		{
+			"tStartMs": 482520,
+			"dDurationMs": 2390,
+			"segs": [
+				{
+					"utf8": "the right thing to do."
+				}
+			]
+		},
+		{
+			"tStartMs": 484910,
+			"dDurationMs": 4120,
+			"segs": [
+				{
+					"utf8": "cc_load_policy is something that\ncontrols whether closed"
+				}
+			]
+		},
+		{
+			"tStartMs": 489030,
+			"dDurationMs": 4500,
+			"segs": [
+				{
+					"utf8": "captions or subtitles are\ndisplayed by default."
+				}
+			]
+		},
+		{
+			"tStartMs": 493530,
+			"dDurationMs": 3770,
+			"segs": [
+				{
+					"utf8": "And the default behavior--\nwe don't set anything for"
+				}
+			]
+		},
+		{
+			"tStartMs": 497300,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "cc_load_policy--"
+				}
+			]
+		},
+		{
+			"tStartMs": 498300,
+			"dDurationMs": 2880,
+			"segs": [
+				{
+					"utf8": "is that the user's preferences\n[? basic ?] on YouTube."
+				}
+			]
+		},
+		{
+			"tStartMs": 501180,
+			"dDurationMs": 2209,
+			"segs": [
+				{
+					"utf8": "There is a way of going in and\nsaying whether you want closed"
+				}
+			]
+		},
+		{
+			"tStartMs": 503389,
+			"dDurationMs": 2671,
+			"segs": [
+				{
+					"utf8": "captions or you don't want\nclosed captions."
+				}
+			]
+		},
+		{
+			"tStartMs": 506060,
+			"dDurationMs": 1210,
+			"segs": [
+				{
+					"utf8": "That's normally what\ntakes effect."
+				}
+			]
+		},
+		{
+			"tStartMs": 507270,
+			"dDurationMs": 2110,
+			"segs": [
+				{
+					"utf8": "If you have a specific video and\nyou know that you always"
+				}
+			]
+		},
+		{
+			"tStartMs": 509380,
+			"dDurationMs": 2480,
+			"segs": [
+				{
+					"utf8": "want the closed captions to\nbe shown, you could set"
+				}
+			]
+		},
+		{
+			"tStartMs": 511860,
+			"dDurationMs": 2510,
+			"segs": [
+				{
+					"utf8": "cc_load_policy to 1."
+				}
+			]
+		},
+		{
+			"tStartMs": 514370,
+			"dDurationMs": 2229,
+			"segs": [
+				{
+					"utf8": "Color's a bit interesting."
+				}
+			]
+		},
+		{
+			"tStartMs": 516599,
+			"dDurationMs": 4420,
+			"segs": [
+				{
+					"utf8": "It's not something that I see\nwidely used and necessarily,"
+				}
+			]
+		},
+		{
+			"tStartMs": 521019,
+			"dDurationMs": 3010,
+			"segs": [
+				{
+					"utf8": "but there are some cases where\nyou might want a little bit of"
+				}
+			]
+		},
+		{
+			"tStartMs": 524029,
+			"dDurationMs": 1641,
+			"segs": [
+				{
+					"utf8": "flair, let's say,\nin your player."
+				}
+			]
+		},
+		{
+			"tStartMs": 525670,
+			"dDurationMs": 2380,
+			"segs": [
+				{
+					"utf8": "And you don't want the\ndefault behavior."
+				}
+			]
+		},
+		{
+			"tStartMs": 528050,
+			"dDurationMs": 5039,
+			"segs": [
+				{
+					"utf8": "So I'm going to go to the\nplayer demo page really"
+				}
+			]
+		},
+		{
+			"tStartMs": 533089,
+			"dDurationMs": 1910,
+			"segs": [
+				{
+					"utf8": "quickly and just show\nyou what it does."
+				}
+			]
+		},
+		{
+			"tStartMs": 534999,
+			"dDurationMs": 7780,
+			"segs": [
+				{
+					"utf8": "You could set color to white\ninstead of red, and you update"
+				}
+			]
+		},
+		{
+			"tStartMs": 542779,
+			"dDurationMs": 2281,
+			"segs": [
+				{
+					"utf8": "the player."
+				}
+			]
+		},
+		{
+			"tStartMs": 545060,
+			"dDurationMs": 1930,
+			"segs": [
+				{
+					"utf8": "Controls should look slightly\ndifferent depending upon"
+				}
+			]
+		},
+		{
+			"tStartMs": 546990,
+			"dDurationMs": 1920,
+			"segs": [
+				{
+					"utf8": "whether they're red or white."
+				}
+			]
+		},
+		{
+			"tStartMs": 548910,
+			"dDurationMs": 2919,
+			"segs": [
+				{
+					"utf8": "So it just basically changes the\nbranding a little bit on"
+				}
+			]
+		},
+		{
+			"tStartMs": 551829,
+			"dDurationMs": 1990,
+			"segs": [
+				{
+					"utf8": "the player."
+				}
+			]
+		},
+		{
+			"tStartMs": 553819,
+			"dDurationMs": 1842,
+			"segs": [
+				{
+					"utf8": "Not necessarily the most useful\nthing in the world, but"
+				}
+			]
+		},
+		{
+			"tStartMs": 555661,
+			"dDurationMs": 3059,
+			"segs": [
+				{
+					"utf8": "it does give you a little\nbit more control."
+				}
+			]
+		},
+		{
+			"tStartMs": 558720,
+			"dDurationMs": 3729,
+			"segs": [
+				{
+					"utf8": "Speaking of control, next item\nalphabetically is controls."
+				}
+			]
+		},
+		{
+			"tStartMs": 562449,
+			"dDurationMs": 2161,
+			"segs": [
+				{
+					"utf8": "And this is actually\nquite useful."
+				}
+			]
+		},
+		{
+			"tStartMs": 564610,
+			"dDurationMs": 4690,
+			"segs": [
+				{
+					"utf8": "There are cases where you can\nactually see a lot of"
+				}
+			]
+		},
+		{
+			"tStartMs": 569300,
+			"dDurationMs": 3860,
+			"segs": [
+				{
+					"utf8": "performance benefits by changing\nthis value from the"
+				}
+			]
+		},
+		{
+			"tStartMs": 573160,
+			"dDurationMs": 4919,
+			"segs": [
+				{
+					"utf8": "defaults to a specific\noption, which is 2."
+				}
+			]
+		},
+		{
+			"tStartMs": 578079,
+			"dDurationMs": 2161,
+			"segs": [
+				{
+					"utf8": "We have a note in the\ndocumentation explaining more"
+				}
+			]
+		},
+		{
+			"tStartMs": 580240,
+			"dDurationMs": 2230,
+			"segs": [
+				{
+					"utf8": "about what this does."
+				}
+			]
+		},
+		{
+			"tStartMs": 582470,
+			"dDurationMs": 3039,
+			"segs": [
+				{
+					"utf8": "And if you read the note, it\nsays that controls=2 can give"
+				}
+			]
+		},
+		{
+			"tStartMs": 585509,
+			"dDurationMs": 3911,
+			"segs": [
+				{
+					"utf8": "you a performance improvement\nover the default behavior."
+				}
+			]
+		},
+		{
+			"tStartMs": 589420,
+			"dDurationMs": 3979,
+			"segs": [
+				{
+					"utf8": "And the reason why that is is\ncontrols=2 has a way of"
+				}
+			]
+		},
+		{
+			"tStartMs": 593399,
+			"dDurationMs": 2461,
+			"segs": [
+				{
+					"utf8": "loading the iframe embedded\nplayer that does not"
+				}
+			]
+		},
+		{
+			"tStartMs": 595860,
+			"dDurationMs": 5110,
+			"segs": [
+				{
+					"utf8": "initialize the underlying\nFlash player by default."
+				}
+			]
+		},
+		{
+			"tStartMs": 600970,
+			"dDurationMs": 3849,
+			"segs": [
+				{
+					"utf8": "It doesn't initialize it until\nyou actually click on the"
+				}
+			]
+		},
+		{
+			"tStartMs": 604819,
+			"dDurationMs": 2861,
+			"segs": [
+				{
+					"utf8": "video thumbnail to start\nthe playback."
+				}
+			]
+		},
+		{
+			"tStartMs": 607680,
+			"dDurationMs": 4509,
+			"segs": [
+				{
+					"utf8": "This obviously only applies to\nplaybacks that do involve the"
+				}
+			]
+		},
+		{
+			"tStartMs": 612189,
+			"dDurationMs": 1481,
+			"segs": [
+				{
+					"utf8": "Flash player."
+				}
+			]
+		},
+		{
+			"tStartMs": 613670,
+			"dDurationMs": 2890,
+			"segs": [
+				{
+					"utf8": "The iframe player might decide\nthat HTML5 video is going to"
+				}
+			]
+		},
+		{
+			"tStartMs": 616560,
+			"dDurationMs": 2920,
+			"segs": [
+				{
+					"utf8": "be used instead, in which case\nthis isn't quite as important."
+				}
+			]
+		},
+		{
+			"tStartMs": 619480,
+			"dDurationMs": 2310,
+			"segs": [
+				{
+					"utf8": "But in situations where Flash\nplayback is being used, you"
+				}
+			]
+		},
+		{
+			"tStartMs": 621790,
+			"dDurationMs": 3070,
+			"segs": [
+				{
+					"utf8": "could really see a significant\nperformance benefit from"
+				}
+			]
+		},
+		{
+			"tStartMs": 624860,
+			"dDurationMs": 1700,
+			"segs": [
+				{
+					"utf8": "setting controls=2."
+				}
+			]
+		},
+		{
+			"tStartMs": 626560,
+			"dDurationMs": 3380,
+			"segs": [
+				{
+					"utf8": "And that might be the default\nthat we use at some point in"
+				}
+			]
+		},
+		{
+			"tStartMs": 629940,
+			"dDurationMs": 3199,
+			"segs": [
+				{
+					"utf8": "the future, as mentioned here,\nas soon as some UI issues are"
+				}
+			]
+		},
+		{
+			"tStartMs": 633139,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "worked out."
+				}
+			]
+		},
+		{
+			"tStartMs": 634139,
+			"dDurationMs": 3250,
+			"segs": [
+				{
+					"utf8": "And I'm going to give you an\nexample of how you could see"
+				}
+			]
+		},
+		{
+			"tStartMs": 637389,
+			"dDurationMs": 2221,
+			"segs": [
+				{
+					"utf8": "that performance benefit."
+				}
+			]
+		},
+		{
+			"tStartMs": 639610,
+			"dDurationMs": 2069,
+			"segs": [
+				{
+					"utf8": "It mainly comes across\nwhen you have--"
+				}
+			]
+		},
+		{
+			"tStartMs": 641679,
+			"dDurationMs": 2671,
+			"segs": [
+				{
+					"utf8": "let's say, I don't want to say\na specific number, but if you"
+				}
+			]
+		},
+		{
+			"tStartMs": 644350,
+			"dDurationMs": 1890,
+			"segs": [
+				{
+					"utf8": "have multiple iframe embeds\non the same page."
+				}
+			]
+		},
+		{
+			"tStartMs": 646240,
+			"dDurationMs": 2689,
+			"segs": [
+				{
+					"utf8": "So this one over here has--"
+				}
+			]
+		},
+		{
+			"tStartMs": 648929,
+			"dDurationMs": 3320,
+			"segs": [
+				{
+					"utf8": "I think there might be 50 from\nthe Google Developers channel."
+				}
+			]
+		},
+		{
+			"tStartMs": 652249,
+			"dDurationMs": 3760,
+			"segs": [
+				{
+					"utf8": "So the first thing that we're\ngoing to look at is behavior"
+				}
+			]
+		},
+		{
+			"tStartMs": 656009,
+			"dDurationMs": 4291,
+			"segs": [
+				{
+					"utf8": "pretty much by default, where\nthere's controls=1 or if you"
+				}
+			]
+		},
+		{
+			"tStartMs": 660300,
+			"dDurationMs": 1289,
+			"segs": [
+				{
+					"utf8": "leave out controls."
+				}
+			]
+		},
+		{
+			"tStartMs": 661589,
+			"dDurationMs": 1021,
+			"segs": [
+				{
+					"utf8": "It's the default."
+				}
+			]
+		},
+		{
+			"tStartMs": 662610,
+			"dDurationMs": 5919,
+			"segs": [
+				{
+					"utf8": "And it can take some time for\nthese underlying Flash players"
+				}
+			]
+		},
+		{
+			"tStartMs": 668529,
+			"dDurationMs": 4350,
+			"segs": [
+				{
+					"utf8": "to all initialize, and can add\nsome latency to the point"
+				}
+			]
+		},
+		{
+			"tStartMs": 672879,
+			"dDurationMs": 2630,
+			"segs": [
+				{
+					"utf8": "where things look like\nthey're ready to be"
+				}
+			]
+		},
+		{
+			"tStartMs": 675509,
+			"dDurationMs": 1791,
+			"segs": [
+				{
+					"utf8": "interacted with on the page."
+				}
+			]
+		},
+		{
+			"tStartMs": 677300,
+			"dDurationMs": 3250,
+			"segs": [
+				{
+					"utf8": "So not necessarily the\nbest user experience."
+				}
+			]
+		},
+		{
+			"tStartMs": 680550,
+			"dDurationMs": 2079,
+			"segs": [
+				{
+					"utf8": "If you take the same thing and\nyou change it to controls"
+				}
+			]
+		},
+		{
+			"tStartMs": 682629,
+			"dDurationMs": 3680,
+			"segs": [
+				{
+					"utf8": "equals 2 explicitly, then you\nshould see a much better"
+				}
+			]
+		},
+		{
+			"tStartMs": 686309,
+			"dDurationMs": 1241,
+			"segs": [
+				{
+					"utf8": "performance."
+				}
+			]
+		},
+		{
+			"tStartMs": 687550,
+			"dDurationMs": 3209,
+			"segs": [
+				{
+					"utf8": "It's quite remarkable,\nactually."
+				}
+			]
+		},
+		{
+			"tStartMs": 690759,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "So what's going on?"
+				}
+			]
+		},
+		{
+			"tStartMs": 691759,
+			"dDurationMs": 1921,
+			"segs": [
+				{
+					"utf8": "[? You can see ?] now again,\nit's just loading in these"
+				}
+			]
+		},
+		{
+			"tStartMs": 693680,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "thumbnails."
+				}
+			]
+		},
+		{
+			"tStartMs": 694680,
+			"dDurationMs": 3509,
+			"segs": [
+				{
+					"utf8": "It's not initializing the Flash\nplayer for each video."
+				}
+			]
+		},
+		{
+			"tStartMs": 698189,
+			"dDurationMs": 2710,
+			"segs": [
+				{
+					"utf8": "And you could have--"
+				}
+			]
+		},
+		{
+			"tStartMs": 700899,
+			"dDurationMs": 1970,
+			"segs": [
+				{
+					"utf8": "I don't want to say you should\nput thousands of embeds on the"
+				}
+			]
+		},
+		{
+			"tStartMs": 702869,
+			"dDurationMs": 2820,
+			"segs": [
+				{
+					"utf8": "same page-- but if you do happen\nto have a large number"
+				}
+			]
+		},
+		{
+			"tStartMs": 705689,
+			"dDurationMs": 3830,
+			"segs": [
+				{
+					"utf8": "of embeds on the page, you\nwill see a difference."
+				}
+			]
+		},
+		{
+			"tStartMs": 709519,
+			"dDurationMs": 1391,
+			"segs": [
+				{
+					"utf8": "So very important to\nkeep that in mind."
+				}
+			]
+		},
+		{
+			"tStartMs": 710910,
+			"dDurationMs": 2810,
+			"segs": [
+				{
+					"utf8": "A few other parameters\nthat are not"
+				}
+			]
+		},
+		{
+			"tStartMs": 713720,
+			"dDurationMs": 2200,
+			"segs": [
+				{
+					"utf8": "necessarily as exciting."
+				}
+			]
+		},
+		{
+			"tStartMs": 715920,
+			"dDurationMs": 4940,
+			"segs": [
+				{
+					"utf8": "There's keyboard support for\nthe ActionScript player."
+				}
+			]
+		},
+		{
+			"tStartMs": 720860,
+			"dDurationMs": 2259,
+			"segs": [
+				{
+					"utf8": "I'm not really sure why you\nwould want to turn this off."
+				}
+			]
+		},
+		{
+			"tStartMs": 723119,
+			"dDurationMs": 2111,
+			"segs": [
+				{
+					"utf8": "I think it's actually kind of\nnice to keep it on, but we do"
+				}
+			]
+		},
+		{
+			"tStartMs": 725230,
+			"dDurationMs": 4139,
+			"segs": [
+				{
+					"utf8": "have the option of turning\nit off if you want."
+				}
+			]
+		},
+		{
+			"tStartMs": 729369,
+			"dDurationMs": 3801,
+			"segs": [
+				{
+					"utf8": "This particular parameter\nis quite important, the"
+				}
+			]
+		},
+		{
+			"tStartMs": 733170,
+			"dDurationMs": 1289,
+			"segs": [
+				{
+					"utf8": "enablejsapi."
+				}
+			]
+		},
+		{
+			"tStartMs": 734459,
+			"dDurationMs": 3930,
+			"segs": [
+				{
+					"utf8": "And what it'll let you do is\nensure that you are able to"
+				}
+			]
+		},
+		{
+			"tStartMs": 738389,
+			"dDurationMs": 2860,
+			"segs": [
+				{
+					"utf8": "talk to the iframe player\non the page using"
+				}
+			]
+		},
+		{
+			"tStartMs": 741249,
+			"dDurationMs": 1051,
+			"segs": [
+				{
+					"utf8": "the JavaScript API."
+				}
+			]
+		},
+		{
+			"tStartMs": 742300,
+			"dDurationMs": 3409,
+			"segs": [
+				{
+					"utf8": "So as I mentioned, we're not\nactually going to be covering"
+				}
+			]
+		},
+		{
+			"tStartMs": 745709,
+			"dDurationMs": 2820,
+			"segs": [
+				{
+					"utf8": "anything about the JavaScript\nAPI in this particular"
+				}
+			]
+		},
+		{
+			"tStartMs": 748529,
+			"dDurationMs": 3180,
+			"segs": [
+				{
+					"utf8": "session, but plenty of\npeople have used it."
+				}
+			]
+		},
+		{
+			"tStartMs": 751709,
+			"dDurationMs": 2471,
+			"segs": [
+				{
+					"utf8": "And the one case where you\nreally need to be sure you're"
+				}
+			]
+		},
+		{
+			"tStartMs": 754180,
+			"dDurationMs": 3159,
+			"segs": [
+				{
+					"utf8": "explicitly setting this is when\nyou're writing the iframe"
+				}
+			]
+		},
+		{
+			"tStartMs": 757339,
+			"dDurationMs": 4521,
+			"segs": [
+				{
+					"utf8": "tag directly to the page."
+				}
+			]
+		},
+		{
+			"tStartMs": 761860,
+			"dDurationMs": 3509,
+			"segs": [
+				{
+					"utf8": "So kind of like this."
+				}
+			]
+		},
+		{
+			"tStartMs": 765369,
+			"dDurationMs": 1340,
+			"segs": [
+				{
+					"utf8": "Because when you're\nusing the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 766709,
+			"dDurationMs": 3560,
+			"segs": [
+				{
+					"utf8": "Player constructor, it pretty\nmuch will be set automatically"
+				}
+			]
+		},
+		{
+			"tStartMs": 770269,
+			"dDurationMs": 2670,
+			"segs": [
+				{
+					"utf8": "for you by default."
+				}
+			]
+		},
+		{
+			"tStartMs": 772939,
+			"dDurationMs": 1640,
+			"segs": [
+				{
+					"utf8": "Just because by virtue of the\nfact that you're using"
+				}
+			]
+		},
+		{
+			"tStartMs": 774579,
+			"dDurationMs": 2421,
+			"segs": [
+				{
+					"utf8": "JavaScript to initialize the\nplayer, chances are you are"
+				}
+			]
+		},
+		{
+			"tStartMs": 777000,
+			"dDurationMs": 2240,
+			"segs": [
+				{
+					"utf8": "going to want to talk to the\nplayer with JavaScript."
+				}
+			]
+		},
+		{
+			"tStartMs": 779240,
+			"dDurationMs": 1120,
+			"segs": [
+				{
+					"utf8": "So it always gets set for you."
+				}
+			]
+		},
+		{
+			"tStartMs": 780360,
+			"dDurationMs": 2680,
+			"segs": [
+				{
+					"utf8": "But that's not the case if you\nexplicitly are writing an"
+				}
+			]
+		},
+		{
+			"tStartMs": 783040,
+			"dDurationMs": 1729,
+			"segs": [
+				{
+					"utf8": "iframe tag to a page."
+				}
+			]
+		},
+		{
+			"tStartMs": 784769,
+			"dDurationMs": 2131,
+			"segs": [
+				{
+					"utf8": "So you really do need to make\nsure there that you have"
+				}
+			]
+		},
+		{
+			"tStartMs": 786900,
+			"dDurationMs": 3689,
+			"segs": [
+				{
+					"utf8": "enabled jsapi set to 1."
+				}
+			]
+		},
+		{
+			"tStartMs": 790589,
+			"dDurationMs": 6851,
+			"segs": [
+				{
+					"utf8": "And that's necessary in order to\ntalk to the iframe player."
+				}
+			]
+		},
+		{
+			"tStartMs": 797440,
+			"dDurationMs": 2679,
+			"segs": [
+				{
+					"utf8": "The end tag, and a little\nbit further down"
+				}
+			]
+		},
+		{
+			"tStartMs": 800119,
+			"dDurationMs": 1981,
+			"segs": [
+				{
+					"utf8": "the alphabet is start."
+				}
+			]
+		},
+		{
+			"tStartMs": 802100,
+			"dDurationMs": 2359,
+			"segs": [
+				{
+					"utf8": "So these are two corresponding\ntags."
+				}
+			]
+		},
+		{
+			"tStartMs": 804459,
+			"dDurationMs": 2570,
+			"segs": [
+				{
+					"utf8": "This gives you a really easy way\nof putting an embed on a"
+				}
+			]
+		},
+		{
+			"tStartMs": 807029,
+			"dDurationMs": 4240,
+			"segs": [
+				{
+					"utf8": "page that has its custom end\ntime and a custom start time."
+				}
+			]
+		},
+		{
+			"tStartMs": 811269,
+			"dDurationMs": 4510,
+			"segs": [
+				{
+					"utf8": "So if you have a three-minute\nvideo and you really want to"
+				}
+			]
+		},
+		{
+			"tStartMs": 815779,
+			"dDurationMs": 1881,
+			"segs": [
+				{
+					"utf8": "embed 30 seconds in the middle\nof the video, you could use"
+				}
+			]
+		},
+		{
+			"tStartMs": 817660,
+			"dDurationMs": 1159,
+			"segs": [
+				{
+					"utf8": "those two tags to do it."
+				}
+			]
+		},
+		{
+			"tStartMs": 818819,
+			"dDurationMs": 4360,
+			"segs": [
+				{
+					"utf8": "As soon as playback reaches\nthe end tag, playback will"
+				}
+			]
+		},
+		{
+			"tStartMs": 823179,
+			"dDurationMs": 1640,
+			"segs": [
+				{
+					"utf8": "effectively stop."
+				}
+			]
+		},
+		{
+			"tStartMs": 824819,
+			"dDurationMs": 2330,
+			"segs": [
+				{
+					"utf8": "So that could be useful."
+				}
+			]
+		},
+		{
+			"tStartMs": 827149,
+			"dDurationMs": 1940,
+			"segs": [
+				{
+					"utf8": "fs parameter--"
+				}
+			]
+		},
+		{
+			"tStartMs": 829089,
+			"dDurationMs": 1430,
+			"segs": [
+				{
+					"utf8": "not super useful anymore."
+				}
+			]
+		},
+		{
+			"tStartMs": 830519,
+			"dDurationMs": 3831,
+			"segs": [
+				{
+					"utf8": "Basically, it lets you control\nwhether there is a full-screen"
+				}
+			]
+		},
+		{
+			"tStartMs": 834350,
+			"dDurationMs": 2580,
+			"segs": [
+				{
+					"utf8": "button on the ActionScript\n3.0 player."
+				}
+			]
+		},
+		{
+			"tStartMs": 836930,
+			"dDurationMs": 3089,
+			"segs": [
+				{
+					"utf8": "But I don't think it has an\neffect on the HTML5 player."
+				}
+			]
+		},
+		{
+			"tStartMs": 840019,
+			"dDurationMs": 4600,
+			"segs": [
+				{
+					"utf8": "So not really sure why you would\nwant to change that."
+				}
+			]
+		},
+		{
+			"tStartMs": 844619,
+			"dDurationMs": 3370,
+			"segs": [
+				{
+					"utf8": "iv_load_policy is something that\ncontrols whether, I guess"
+				}
+			]
+		},
+		{
+			"tStartMs": 847989,
+			"dDurationMs": 3400,
+			"segs": [
+				{
+					"utf8": "interactive video\nannotations--"
+				}
+			]
+		},
+		{
+			"tStartMs": 851389,
+			"dDurationMs": 2740,
+			"segs": [
+				{
+					"utf8": "for lack of a better way of\ndescribing it-- is shown on"
+				}
+			]
+		},
+		{
+			"tStartMs": 854129,
+			"dDurationMs": 2500,
+			"segs": [
+				{
+					"utf8": "your video by default."
+				}
+			]
+		},
+		{
+			"tStartMs": 856629,
+			"dDurationMs": 1750,
+			"segs": [
+				{
+					"utf8": "So there's a couple of different\nvalues over here."
+				}
+			]
+		},
+		{
+			"tStartMs": 858379,
+			"dDurationMs": 1690,
+			"segs": [
+				{
+					"utf8": "You use 1 or 3."
+				}
+			]
+		},
+		{
+			"tStartMs": 860069,
+			"dDurationMs": 2411,
+			"segs": [
+				{
+					"utf8": "Basically, setting at 1 will\nmake sure that those"
+				}
+			]
+		},
+		{
+			"tStartMs": 862480,
+			"dDurationMs": 1349,
+			"segs": [
+				{
+					"utf8": "annotations are shown."
+				}
+			]
+		},
+		{
+			"tStartMs": 863829,
+			"dDurationMs": 1130,
+			"segs": [
+				{
+					"utf8": "Setting it to 3 will make\nsure that they're"
+				}
+			]
+		},
+		{
+			"tStartMs": 864959,
+			"dDurationMs": 1391,
+			"segs": [
+				{
+					"utf8": "not shown by default."
+				}
+			]
+		},
+		{
+			"tStartMs": 866350,
+			"dDurationMs": 3449,
+			"segs": [
+				{
+					"utf8": "But at any point, the user can\nchange the setting explicitly"
+				}
+			]
+		},
+		{
+			"tStartMs": 869799,
+			"dDurationMs": 4901,
+			"segs": [
+				{
+					"utf8": "in the player, if they want to\nshow or hide the annotations."
+				}
+			]
+		},
+		{
+			"tStartMs": 874700,
+			"dDurationMs": 1389,
+			"segs": [
+				{
+					"utf8": "List is a really interesting\none."
+				}
+			]
+		},
+		{
+			"tStartMs": 876089,
+			"dDurationMs": 2911,
+			"segs": [
+				{
+					"utf8": "And there is quite a bit to\ntalk about with list."
+				}
+			]
+		},
+		{
+			"tStartMs": 879000,
+			"dDurationMs": 3790,
+			"segs": [
+				{
+					"utf8": "So I'm actually going to defer\nat this point to a whole blog"
+				}
+			]
+		},
+		{
+			"tStartMs": 882790,
+			"dDurationMs": 3870,
+			"segs": [
+				{
+					"utf8": "post that we put together to\ntalk about the different types"
+				}
+			]
+		},
+		{
+			"tStartMs": 886660,
+			"dDurationMs": 4460,
+			"segs": [
+				{
+					"utf8": "of values that the list\nparameter and the listType"
+				}
+			]
+		},
+		{
+			"tStartMs": 891120,
+			"dDurationMs": 1899,
+			"segs": [
+				{
+					"utf8": "parameter, which is\nan associated"
+				}
+			]
+		},
+		{
+			"tStartMs": 893019,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "parameter, can take."
+				}
+			]
+		},
+		{
+			"tStartMs": 894019,
+			"dDurationMs": 2750,
+			"segs": [
+				{
+					"utf8": "I'll link to this blog post in\nthe video annotations, so you"
+				}
+			]
+		},
+		{
+			"tStartMs": 896769,
+			"dDurationMs": 1331,
+			"segs": [
+				{
+					"utf8": "can read it in more detail."
+				}
+			]
+		},
+		{
+			"tStartMs": 898100,
+			"dDurationMs": 3229,
+			"segs": [
+				{
+					"utf8": "But the long and short of it is\nthat it's a really easy way"
+				}
+			]
+		},
+		{
+			"tStartMs": 901329,
+			"dDurationMs": 4360,
+			"segs": [
+				{
+					"utf8": "to take a simple embedded player\non your page and use"
+				}
+			]
+		},
+		{
+			"tStartMs": 905689,
+			"dDurationMs": 3330,
+			"segs": [
+				{
+					"utf8": "that to display a list of videos\nwithout having to hard"
+				}
+			]
+		},
+		{
+			"tStartMs": 909019,
+			"dDurationMs": 2681,
+			"segs": [
+				{
+					"utf8": "code the video IDs in advance."
+				}
+			]
+		},
+		{
+			"tStartMs": 911700,
+			"dDurationMs": 3069,
+			"segs": [
+				{
+					"utf8": "So you could have one specific\nplayer on your page and say,"
+				}
+			]
+		},
+		{
+			"tStartMs": 914769,
+			"dDurationMs": 3031,
+			"segs": [
+				{
+					"utf8": "play back the most recent videos\nfrom a specific YouTube"
+				}
+			]
+		},
+		{
+			"tStartMs": 917800,
+			"dDurationMs": 5659,
+			"segs": [
+				{
+					"utf8": "channel or specific playlist or\nspecific search term, even."
+				}
+			]
+		},
+		{
+			"tStartMs": 923459,
+			"dDurationMs": 3340,
+			"segs": [
+				{
+					"utf8": "So you could say, this is an\nembedded player that will show"
+				}
+			]
+		},
+		{
+			"tStartMs": 926799,
+			"dDurationMs": 2220,
+			"segs": [
+				{
+					"utf8": "the latest videos that\nmatch the search"
+				}
+			]
+		},
+		{
+			"tStartMs": 929019,
+			"dDurationMs": 1760,
+			"segs": [
+				{
+					"utf8": "from the YouTube API."
+				}
+			]
+		},
+		{
+			"tStartMs": 930779,
+			"dDurationMs": 2050,
+			"segs": [
+				{
+					"utf8": "Something along those lines."
+				}
+			]
+		},
+		{
+			"tStartMs": 932829,
+			"dDurationMs": 1110,
+			"segs": [
+				{
+					"utf8": "It's quite useful."
+				}
+			]
+		},
+		{
+			"tStartMs": 933939,
+			"dDurationMs": 2640,
+			"segs": [
+				{
+					"utf8": "I don't think as many people\nknow about it as they should."
+				}
+			]
+		},
+		{
+			"tStartMs": 936579,
+			"dDurationMs": 2420,
+			"segs": [
+				{
+					"utf8": "So hopefully people will watch\nthis and start using it a"
+				}
+			]
+		},
+		{
+			"tStartMs": 938999,
+			"dDurationMs": 1500,
+			"segs": [
+				{
+					"utf8": "little bit more."
+				}
+			]
+		},
+		{
+			"tStartMs": 940499,
+			"dDurationMs": 2911,
+			"segs": [
+				{
+					"utf8": "listType goes hand in hand\nwith the list parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 943410,
+			"dDurationMs": 2429,
+			"segs": [
+				{
+					"utf8": "There is a loop parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 945839,
+			"dDurationMs": 3250,
+			"segs": [
+				{
+					"utf8": "And the loop parameter will--"
+				}
+			]
+		},
+		{
+			"tStartMs": 949089,
+			"dDurationMs": 2511,
+			"segs": [
+				{
+					"utf8": "as explained in the\ndocumentation--"
+				}
+			]
+		},
+		{
+			"tStartMs": 951600,
+			"dDurationMs": 3949,
+			"segs": [
+				{
+					"utf8": "allow you to automatically\nrestart playback of a video"
+				}
+			]
+		},
+		{
+			"tStartMs": 955549,
+			"dDurationMs": 2061,
+			"segs": [
+				{
+					"utf8": "when the playback has ended."
+				}
+			]
+		},
+		{
+			"tStartMs": 957610,
+			"dDurationMs": 2501,
+			"segs": [
+				{
+					"utf8": "You have to have a little bit of\na hack, if you're trying to"
+				}
+			]
+		},
+		{
+			"tStartMs": 960111,
+			"dDurationMs": 1989,
+			"segs": [
+				{
+					"utf8": "do this for a single video,\nwhere you create a playlist"
+				}
+			]
+		},
+		{
+			"tStartMs": 962100,
+			"dDurationMs": 2290,
+			"segs": [
+				{
+					"utf8": "that has only one video\nentry in it."
+				}
+			]
+		},
+		{
+			"tStartMs": 964390,
+			"dDurationMs": 2389,
+			"segs": [
+				{
+					"utf8": "So we have a little bit\nmore info there."
+				}
+			]
+		},
+		{
+			"tStartMs": 966779,
+			"dDurationMs": 3131,
+			"segs": [
+				{
+					"utf8": "modestbranding is something\nthat's covered in a different"
+				}
+			]
+		},
+		{
+			"tStartMs": 969910,
+			"dDurationMs": 2500,
+			"segs": [
+				{
+					"utf8": "blog post, which we will also\nlink to from the annotation."
+				}
+			]
+		},
+		{
+			"tStartMs": 972410,
+			"dDurationMs": 5359,
+			"segs": [
+				{
+					"utf8": "And it talks about the option\ndown here at the bottom."
+				}
+			]
+		},
+		{
+			"tStartMs": 977769,
+			"dDurationMs": 2760,
+			"segs": [
+				{
+					"utf8": "It's not exactly a fully\nlogoless player."
+				}
+			]
+		},
+		{
+			"tStartMs": 980529,
+			"dDurationMs": 4560,
+			"segs": [
+				{
+					"utf8": "There still is a YouTube logo\ninvolved that shows, I think,"
+				}
+			]
+		},
+		{
+			"tStartMs": 985089,
+			"dDurationMs": 2780,
+			"segs": [
+				{
+					"utf8": "on the pause screen in the upper\nright-hand corner, or in"
+				}
+			]
+		},
+		{
+			"tStartMs": 987869,
+			"dDurationMs": 1710,
+			"segs": [
+				{
+					"utf8": "the queued screen."
+				}
+			]
+		},
+		{
+			"tStartMs": 989579,
+			"dDurationMs": 4170,
+			"segs": [
+				{
+					"utf8": "But it is one parameter that you\ncould set to tone down the"
+				}
+			]
+		},
+		{
+			"tStartMs": 993749,
+			"dDurationMs": 2950,
+			"segs": [
+				{
+					"utf8": "YouTube branding\non the player."
+				}
+			]
+		},
+		{
+			"tStartMs": 996699,
+			"dDurationMs": 4171,
+			"segs": [
+				{
+					"utf8": "And that's something that you\nmight want to keep in mind if"
+				}
+			]
+		},
+		{
+			"tStartMs": 1000870,
+			"dDurationMs": 2949,
+			"segs": [
+				{
+					"utf8": "you have a scenario where you\nwant to embed, but don't want"
+				}
+			]
+		},
+		{
+			"tStartMs": 1003819,
+			"dDurationMs": 3531,
+			"segs": [
+				{
+					"utf8": "to make it fully YouTubed."
+				}
+			]
+		},
+		{
+			"tStartMs": 1007350,
+			"dDurationMs": 4209,
+			"segs": [
+				{
+					"utf8": "The origin parameter is\nsomething that can be used"
+				}
+			]
+		},
+		{
+			"tStartMs": 1011559,
+			"dDurationMs": 3851,
+			"segs": [
+				{
+					"utf8": "when you are using the iframe\nembed tag, and you're going to"
+				}
+			]
+		},
+		{
+			"tStartMs": 1015410,
+			"dDurationMs": 4889,
+			"segs": [
+				{
+					"utf8": "be interacting with the iframe\nembed using JavaScript."
+				}
+			]
+		},
+		{
+			"tStartMs": 1020299,
+			"dDurationMs": 2210,
+			"segs": [
+				{
+					"utf8": "So as mentioned before, you\nmight want to explicitly put"
+				}
+			]
+		},
+		{
+			"tStartMs": 1022509,
+			"dDurationMs": 1310,
+			"segs": [
+				{
+					"utf8": "in enablejsapi."
+				}
+			]
+		},
+		{
+			"tStartMs": 1023819,
+			"dDurationMs": 2951,
+			"segs": [
+				{
+					"utf8": "You also might want to\nput in the origin"
+				}
+			]
+		},
+		{
+			"tStartMs": 1026770,
+			"dDurationMs": 1600,
+			"segs": [
+				{
+					"utf8": "parameter over here."
+				}
+			]
+		},
+		{
+			"tStartMs": 1028370,
+			"dDurationMs": 4530,
+			"segs": [
+				{
+					"utf8": "And you set it equal to the full\nURL for your web page."
+				}
+			]
+		},
+		{
+			"tStartMs": 1032900,
+			"dDurationMs": 4419,
+			"segs": [
+				{
+					"utf8": "And this is a security mechanism\nto make sure that"
+				}
+			]
+		},
+		{
+			"tStartMs": 1037319,
+			"dDurationMs": 2750,
+			"segs": [
+				{
+					"utf8": "only JavaScript that's run from\nyour host web page is"
+				}
+			]
+		},
+		{
+			"tStartMs": 1040069,
+			"dDurationMs": 3100,
+			"segs": [
+				{
+					"utf8": "able to talk to the player."
+				}
+			]
+		},
+		{
+			"tStartMs": 1043169,
+			"dDurationMs": 1790,
+			"segs": [
+				{
+					"utf8": "And if you're using the YT."
+				}
+			]
+		},
+		{
+			"tStartMs": 1044959,
+			"dDurationMs": 2311,
+			"segs": [
+				{
+					"utf8": "Player constructor, it gets\nset automatically for you."
+				}
+			]
+		},
+		{
+			"tStartMs": 1047270,
+			"dDurationMs": 2279,
+			"segs": [
+				{
+					"utf8": "So this is another instance\nwhere you really only have to"
+				}
+			]
+		},
+		{
+			"tStartMs": 1049549,
+			"dDurationMs": 2850,
+			"segs": [
+				{
+					"utf8": "worry about this when you're\nexplicitly writing out an"
+				}
+			]
+		},
+		{
+			"tStartMs": 1052399,
+			"dDurationMs": 2491,
+			"segs": [
+				{
+					"utf8": "iframe tag."
+				}
+			]
+		},
+		{
+			"tStartMs": 1054890,
+			"dDurationMs": 3330,
+			"segs": [
+				{
+					"utf8": "And sometimes people run into\nissues where they explicitly"
+				}
+			]
+		},
+		{
+			"tStartMs": 1058220,
+			"dDurationMs": 3020,
+			"segs": [
+				{
+					"utf8": "were using the iframe tag, and\nthey're trying to talk to it"
+				}
+			]
+		},
+		{
+			"tStartMs": 1061240,
+			"dDurationMs": 3980,
+			"segs": [
+				{
+					"utf8": "using JavaScript, but their\ncode just isn't working."
+				}
+			]
+		},
+		{
+			"tStartMs": 1065220,
+			"dDurationMs": 2449,
+			"segs": [
+				{
+					"utf8": "One thing to debug in that case\nis check to see whether"
+				}
+			]
+		},
+		{
+			"tStartMs": 1067669,
+			"dDurationMs": 1841,
+			"segs": [
+				{
+					"utf8": "you are setting the\norigin parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 1069510,
+			"dDurationMs": 4310,
+			"segs": [
+				{
+					"utf8": "And if you are, make sure that\nit's really set to the full"
+				}
+			]
+		},
+		{
+			"tStartMs": 1073820,
+			"dDurationMs": 3900,
+			"segs": [
+				{
+					"utf8": "URL of the host name\nfor your site."
+				}
+			]
+		},
+		{
+			"tStartMs": 1077720,
+			"dDurationMs": 1970,
+			"segs": [
+				{
+					"utf8": "playerapiid--"
+				}
+			]
+		},
+		{
+			"tStartMs": 1079690,
+			"dDurationMs": 2080,
+			"segs": [
+				{
+					"utf8": "this isn't really relevant\nanymore."
+				}
+			]
+		},
+		{
+			"tStartMs": 1081770,
+			"dDurationMs": 3119,
+			"segs": [
+				{
+					"utf8": "It's more of a way of using the\nolder JavaScript API for"
+				}
+			]
+		},
+		{
+			"tStartMs": 1084889,
+			"dDurationMs": 1721,
+			"segs": [
+				{
+					"utf8": "identifying your player."
+				}
+			]
+		},
+		{
+			"tStartMs": 1086610,
+			"dDurationMs": 3809,
+			"segs": [
+				{
+					"utf8": "There's a playlist parameter\nwhich is easily confused with"
+				}
+			]
+		},
+		{
+			"tStartMs": 1090419,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "the list parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 1091419,
+			"dDurationMs": 2470,
+			"segs": [
+				{
+					"utf8": "And it is something that\nactually takes in a different"
+				}
+			]
+		},
+		{
+			"tStartMs": 1093889,
+			"dDurationMs": 1000,
+			"segs": [
+				{
+					"utf8": "set of values."
+				}
+			]
+		},
+		{
+			"tStartMs": 1094889,
+			"dDurationMs": 3851,
+			"segs": [
+				{
+					"utf8": "The playlist parameter takes\nin a list of video IDs."
+				}
+			]
+		},
+		{
+			"tStartMs": 1098740,
+			"dDurationMs": 1769,
+			"segs": [
+				{
+					"utf8": "So this does not have to\nbe a real playlist, a"
+				}
+			]
+		},
+		{
+			"tStartMs": 1100509,
+			"dDurationMs": 1311,
+			"segs": [
+				{
+					"utf8": "[? list that ?] exists\non YouTube."
+				}
+			]
+		},
+		{
+			"tStartMs": 1101820,
+			"dDurationMs": 4500,
+			"segs": [
+				{
+					"utf8": "It doesn't have to be anything\nthat uploads"
+				}
+			]
+		},
+		{
+			"tStartMs": 1106320,
+			"dDurationMs": 1489,
+			"segs": [
+				{
+					"utf8": "from a specific channel."
+				}
+			]
+		},
+		{
+			"tStartMs": 1107809,
+			"dDurationMs": 2881,
+			"segs": [
+				{
+					"utf8": "It could just be a list of any\nvideo IDs that you want."
+				}
+			]
+		},
+		{
+			"tStartMs": 1110690,
+			"dDurationMs": 4900,
+			"segs": [
+				{
+					"utf8": "And it's a way of generating a\ndynamic, on-the-fly playlist."
+				}
+			]
+		},
+		{
+			"tStartMs": 1115590,
+			"dDurationMs": 3500,
+			"segs": [
+				{
+					"utf8": "So some use cases where\nthat might be useful."
+				}
+			]
+		},
+		{
+			"tStartMs": 1119090,
+			"dDurationMs": 2679,
+			"segs": [
+				{
+					"utf8": "There's the rel parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 1121769,
+			"dDurationMs": 4000,
+			"segs": [
+				{
+					"utf8": "And this controls whether or not\nthe end screen of a video"
+				}
+			]
+		},
+		{
+			"tStartMs": 1125769,
+			"dDurationMs": 3431,
+			"segs": [
+				{
+					"utf8": "will display related\nvideos or not."
+				}
+			]
+		},
+		{
+			"tStartMs": 1129200,
+			"dDurationMs": 2090,
+			"segs": [
+				{
+					"utf8": "Most folks are familiar with the\nfact that once you reach"
+				}
+			]
+		},
+		{
+			"tStartMs": 1131290,
+			"dDurationMs": 4330,
+			"segs": [
+				{
+					"utf8": "the end of a YouTube video,\nyou'll see some configuration"
+				}
+			]
+		},
+		{
+			"tStartMs": 1135620,
+			"dDurationMs": 3429,
+			"segs": [
+				{
+					"utf8": "of thumbnails with suggestions\nfor other videos to play."
+				}
+			]
+		},
+		{
+			"tStartMs": 1139049,
+			"dDurationMs": 2801,
+			"segs": [
+				{
+					"utf8": "We do have the ability to turn\nthat off if you feel like you"
+				}
+			]
+		},
+		{
+			"tStartMs": 1141850,
+			"dDurationMs": 4329,
+			"segs": [
+				{
+					"utf8": "do not want that\non your embeds."
+				}
+			]
+		},
+		{
+			"tStartMs": 1146179,
+			"dDurationMs": 6490,
+			"segs": [
+				{
+					"utf8": "showinfo is something that will\ncontrol what is displayed"
+				}
+			]
+		},
+		{
+			"tStartMs": 1152669,
+			"dDurationMs": 2600,
+			"segs": [
+				{
+					"utf8": "initially in the\nqueued states."
+				}
+			]
+		},
+		{
+			"tStartMs": 1155269,
+			"dDurationMs": 2871,
+			"segs": [
+				{
+					"utf8": "There's ways of taking the\ndefault behavior and kind of"
+				}
+			]
+		},
+		{
+			"tStartMs": 1158140,
+			"dDurationMs": 1970,
+			"segs": [
+				{
+					"utf8": "toning it down a bit, again,\nwhere you don't see quite as"
+				}
+			]
+		},
+		{
+			"tStartMs": 1160110,
+			"dDurationMs": 3270,
+			"segs": [
+				{
+					"utf8": "much before the video starts."
+				}
+			]
+		},
+		{
+			"tStartMs": 1163380,
+			"dDurationMs": 1760,
+			"segs": [
+				{
+					"utf8": "And you can set it to\nshow info equal"
+				}
+			]
+		},
+		{
+			"tStartMs": 1165140,
+			"dDurationMs": 1990,
+			"segs": [
+				{
+					"utf8": "0, if you want that."
+				}
+			]
+		},
+		{
+			"tStartMs": 1167130,
+			"dDurationMs": 2230,
+			"segs": [
+				{
+					"utf8": "showinfo's actually used\nin another case."
+				}
+			]
+		},
+		{
+			"tStartMs": 1169360,
+			"dDurationMs": 2610,
+			"segs": [
+				{
+					"utf8": "And that's when you're using\nthe list player."
+				}
+			]
+		},
+		{
+			"tStartMs": 1171970,
+			"dDurationMs": 4669,
+			"segs": [
+				{
+					"utf8": "And explicitly setting showinfo\nequal to 1 will make"
+				}
+			]
+		},
+		{
+			"tStartMs": 1176639,
+			"dDurationMs": 4611,
+			"segs": [
+				{
+					"utf8": "it so that there is a list of\nqueued videos in the playlist"
+				}
+			]
+		},
+		{
+			"tStartMs": 1181250,
+			"dDurationMs": 1320,
+			"segs": [
+				{
+					"utf8": "in your list player."
+				}
+			]
+		},
+		{
+			"tStartMs": 1182570,
+			"dDurationMs": 1609,
+			"segs": [
+				{
+					"utf8": "So if we look over here,\nthis is a case where"
+				}
+			]
+		},
+		{
+			"tStartMs": 1184179,
+			"dDurationMs": 3151,
+			"segs": [
+				{
+					"utf8": "showinfo is set to 1."
+				}
+			]
+		},
+		{
+			"tStartMs": 1187330,
+			"dDurationMs": 1910,
+			"segs": [
+				{
+					"utf8": "This is a playlist player that's\nloading everything from"
+				}
+			]
+		},
+		{
+			"tStartMs": 1189240,
+			"dDurationMs": 1500,
+			"segs": [
+				{
+					"utf8": "Google Developers."
+				}
+			]
+		},
+		{
+			"tStartMs": 1190740,
+			"dDurationMs": 2189,
+			"segs": [
+				{
+					"utf8": "And you'll see, before playback\nhas even started, you"
+				}
+			]
+		},
+		{
+			"tStartMs": 1192929,
+			"dDurationMs": 3470,
+			"segs": [
+				{
+					"utf8": "have this handy thumbnail for\nall the videos that are queued"
+				}
+			]
+		},
+		{
+			"tStartMs": 1196399,
+			"dDurationMs": 1870,
+			"segs": [
+				{
+					"utf8": "up in the playlist for\nthe next videos."
+				}
+			]
+		},
+		{
+			"tStartMs": 1198269,
+			"dDurationMs": 2701,
+			"segs": [
+				{
+					"utf8": "It will let you choose what\nyou want to start with."
+				}
+			]
+		},
+		{
+			"tStartMs": 1200970,
+			"dDurationMs": 3490,
+			"segs": [
+				{
+					"utf8": "So it is actually quite useful\nfor scenarios where you're"
+				}
+			]
+		},
+		{
+			"tStartMs": 1204460,
+			"dDurationMs": 4199,
+			"segs": [
+				{
+					"utf8": "doing the list player."
+				}
+			]
+		},
+		{
+			"tStartMs": 1208659,
+			"dDurationMs": 3911,
+			"segs": [
+				{
+					"utf8": "Start parameter we really\ncovered before, hand in hand"
+				}
+			]
+		},
+		{
+			"tStartMs": 1212570,
+			"dDurationMs": 1890,
+			"segs": [
+				{
+					"utf8": "with the end parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 1214460,
+			"dDurationMs": 2900,
+			"segs": [
+				{
+					"utf8": "And the last one is the\ntheme parameter."
+				}
+			]
+		},
+		{
+			"tStartMs": 1217360,
+			"dDurationMs": 1949,
+			"segs": [
+				{
+					"utf8": "This is something similar to\nthat earlier color parameter"
+				}
+			]
+		},
+		{
+			"tStartMs": 1219309,
+			"dDurationMs": 3901,
+			"segs": [
+				{
+					"utf8": "that just lets you change the\ndefault way that the player"
+				}
+			]
+		},
+		{
+			"tStartMs": 1223210,
+			"dDurationMs": 3400,
+			"segs": [
+				{
+					"utf8": "looks and gives you some degree\nof customization in"
+				}
+			]
+		},
+		{
+			"tStartMs": 1226610,
+			"dDurationMs": 2659,
+			"segs": [
+				{
+					"utf8": "that regard."
+				}
+			]
+		},
+		{
+			"tStartMs": 1229269,
+			"dDurationMs": 2770,
+			"segs": [
+				{
+					"utf8": "There are now a couple of\ndeprecated parameters."
+				}
+			]
+		},
+		{
+			"tStartMs": 1232039,
+			"dDurationMs": 1261,
+			"segs": [
+				{
+					"utf8": "I'm not going to cover those."
+				}
+			]
+		},
+		{
+			"tStartMs": 1233300,
+			"dDurationMs": 1359,
+			"segs": [
+				{
+					"utf8": "They're deprecated\nfor a reason."
+				}
+			]
+		},
+		{
+			"tStartMs": 1234659,
+			"dDurationMs": 1761,
+			"segs": [
+				{
+					"utf8": "We don't want folks using\nthem anymore."
+				}
+			]
+		},
+		{
+			"tStartMs": 1236420,
+			"dDurationMs": 4070,
+			"segs": [
+				{
+					"utf8": "I wanted to point out that\nthere are occasionally--"
+				}
+			]
+		},
+		{
+			"tStartMs": 1240490,
+			"dDurationMs": 3819,
+			"segs": [
+				{
+					"utf8": "I don't want to say rumors--\nbut certain parameters out"
+				}
+			]
+		},
+		{
+			"tStartMs": 1244309,
+			"dDurationMs": 2661,
+			"segs": [
+				{
+					"utf8": "there that people pass around\nand say, hey, you can use this"
+				}
+			]
+		},
+		{
+			"tStartMs": 1246970,
+			"dDurationMs": 4169,
+			"segs": [
+				{
+					"utf8": "player parameter to force HTML5\nplayback, or use this"
+				}
+			]
+		},
+		{
+			"tStartMs": 1251139,
+			"dDurationMs": 2620,
+			"segs": [
+				{
+					"utf8": "player parameter to force\nplayback in a certain quality"
+				}
+			]
+		},
+		{
+			"tStartMs": 1253759,
+			"dDurationMs": 2550,
+			"segs": [
+				{
+					"utf8": "level or something along\nthose lines."
+				}
+			]
+		},
+		{
+			"tStartMs": 1256309,
+			"dDurationMs": 2090,
+			"segs": [
+				{
+					"utf8": "Those are undocumented\nfor a reason."
+				}
+			]
+		},
+		{
+			"tStartMs": 1258399,
+			"dDurationMs": 3581,
+			"segs": [
+				{
+					"utf8": "We really do not want people to\nuse parameters that aren't"
+				}
+			]
+		},
+		{
+			"tStartMs": 1261980,
+			"dDurationMs": 2340,
+			"segs": [
+				{
+					"utf8": "explicitly mentioned in the\ndocumentation, partly because"
+				}
+			]
+		},
+		{
+			"tStartMs": 1264320,
+			"dDurationMs": 2209,
+			"segs": [
+				{
+					"utf8": "we're not fully committed\nto supporting them."
+				}
+			]
+		},
+		{
+			"tStartMs": 1266529,
+			"dDurationMs": 3971,
+			"segs": [
+				{
+					"utf8": "They might sometimes work in\nsome cases, and they might"
+				}
+			]
+		},
+		{
+			"tStartMs": 1270500,
+			"dDurationMs": 1809,
+			"segs": [
+				{
+					"utf8": "stop working at any time\nin the future."
+				}
+			]
+		},
+		{
+			"tStartMs": 1272309,
+			"dDurationMs": 2781,
+			"segs": [
+				{
+					"utf8": "So we really don't want people\nto build things that rely on"
+				}
+			]
+		},
+		{
+			"tStartMs": 1275090,
+			"dDurationMs": 2100,
+			"segs": [
+				{
+					"utf8": "those parameters."
+				}
+			]
+		},
+		{
+			"tStartMs": 1277190,
+			"dDurationMs": 4880,
+			"segs": [
+				{
+					"utf8": "And there's also just cases\nwhere we want control to be in"
+				}
+			]
+		},
+		{
+			"tStartMs": 1282070,
+			"dDurationMs": 3370,
+			"segs": [
+				{
+					"utf8": "the hands of the person who's\nviewing the embed."
+				}
+			]
+		},
+		{
+			"tStartMs": 1285440,
+			"dDurationMs": 5260,
+			"segs": [
+				{
+					"utf8": "So we want control over the\ndefault playback to really lie"
+				}
+			]
+		},
+		{
+			"tStartMs": 1290700,
+			"dDurationMs": 3140,
+			"segs": [
+				{
+					"utf8": "in the person who's using the\nweb browser and might have"
+				}
+			]
+		},
+		{
+			"tStartMs": 1293840,
+			"dDurationMs": 2030,
+			"segs": [
+				{
+					"utf8": "Flash enabled."
+				}
+			]
+		},
+		{
+			"tStartMs": 1295870,
+			"dDurationMs": 5299,
+			"segs": [
+				{
+					"utf8": "Or the default auto quality for\nthe quality level in many"
+				}
+			]
+		},
+		{
+			"tStartMs": 1301169,
+			"dDurationMs": 3000,
+			"segs": [
+				{
+					"utf8": "cases gives the best playback\nexperience."
+				}
+			]
+		},
+		{
+			"tStartMs": 1304169,
+			"dDurationMs": 3591,
+			"segs": [
+				{
+					"utf8": "So if you don't see something\nlisted as a supported"
+				}
+			]
+		},
+		{
+			"tStartMs": 1307760,
+			"dDurationMs": 1390,
+			"segs": [
+				{
+					"utf8": "parameter, please\ndon't use it."
+				}
+			]
+		},
+		{
+			"tStartMs": 1309150,
+			"dDurationMs": 3499,
+			"segs": [
+				{
+					"utf8": "And if you do happen to find\nsome parameters, please don't"
+				}
+			]
+		},
+		{
+			"tStartMs": 1312649,
+			"dDurationMs": 3301,
+			"segs": [
+				{
+					"utf8": "complain if they ever break at\nsome point in the future."
+				}
+			]
+		},
+		{
+			"tStartMs": 1315950,
+			"dDurationMs": 3060,
+			"segs": [
+				{
+					"utf8": "I guess that's the\nmain takeaway."
+				}
+			]
+		},
+		{
+			"tStartMs": 1319010,
+			"dDurationMs": 2440,
+			"segs": [
+				{
+					"utf8": "That covers the list of all\nthe supported parameters."
+				}
+			]
+		},
+		{
+			"tStartMs": 1321450,
+			"dDurationMs": 2719,
+			"segs": [
+				{
+					"utf8": "We had a lot of different\nweb material here."
+				}
+			]
+		},
+		{
+			"tStartMs": 1324169,
+			"dDurationMs": 1951,
+			"segs": [
+				{
+					"utf8": "And be sure to check out the\nannotations on the video for"
+				}
+			]
+		},
+		{
+			"tStartMs": 1326120,
+			"dDurationMs": 3130,
+			"segs": [
+				{
+					"utf8": "links to everything that\nwe covered today."
+				}
+			]
+		},
+		{
+			"tStartMs": 1329250,
+			"dDurationMs": 3799,
+			"segs": [
+				{
+					"utf8": "Thanks very much for watching."
+				}
+			]
+		},
+		{
+			"tStartMs": 1333049,
+			"dDurationMs": 4260,
+			"segs": [
+				{
+					"utf8": "And we'll see everybody\nnext week."
+				}
+			]
+		},
+		{
+			"tStartMs": 1337309,
+			"dDurationMs": 3330,
+			"segs": [
+				{
+					"utf8": "Cheers."
+				}
+			]
+		}
+	]
+}
