@@ -1,11 +1,15 @@
 import flask
 from flask import request, jsonify
 import redis
-from src.pons_trans import PonsTrans
+from pons_trans import PonsTrans
+from flask_cors import CORS
 import os
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+CORS(app, resources={
+    r"/pons": {"origins": "http://localhost:3000"}
+})
 
 r = redis.Redis(host=os.getenv('REDIS'), port=6379, db=0)
 

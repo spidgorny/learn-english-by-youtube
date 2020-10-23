@@ -1,4 +1,6 @@
 import * as _ from 'lodash';
+// @ts-ignore
+import LocalStorageCache from 'localstorage-cache';
 
 const words5000 = require(__dirname + '/5000words');
 
@@ -34,10 +36,22 @@ export async function progress(iterable: Promise<any>[], onprogress: Function) {
 	);
 }
 
+export function wrapCache(cache: LocalStorageCache, key: string, otherwise: Function) {
+	const cached = cache.getCache(key);
+	if (cached && Object.keys(cached).length) {
+		return cached;
+	}
+	const value = otherwise(key);
+	cache.setCache(key, value);
+	return value;
+}
 
 export default class Tokenizer {
 
+	cache: LocalStorageCache;
+
 	constructor(protected sentences: string[]) {
+		this.cache = new LocalStorageCache(2 * 1024, 'LRU');
 	}
 
 	getTerms() {
@@ -47,17 +61,21 @@ export default class Tokenizer {
 		const uniq = _.uniq(words);
 		// const stems = uniq.map((word: string) => natural.PorterStemmer.stem(word));
 		// const uStems = _.uniq(stems)
-		const special = uniq.filter((word: string) => !words5000.includes(word));
+		const special = uniq.filter((word: string) => !words5000.includes(word.toLowerCase()));
 		const moreThanOneChar = special.filter((word: string) => word.length > 2);
 		return moreThanOneChar;
 	}
 
-	translate(words: string[]) {
-		const promises = words.map((word: string) => this.fetchOneWord);
+	translate(words: string[]): Promise<any>[] {
+		const promises = words.map((word: string) => this.fetchOneWordCached(word));
 		return promises;
 	}
 
-	async fetchOneWord(word: string) {
+	fetchOneWordCached(word: string): Promise<string> {
+		return wrapCache(this.cache, word, this.fetchOneWord.bind(this));
+	}
+
+	async fetchOneWord(word: string): Promise<string> {
 		const url = 'http://127.0.0.1:5000/pons?word=';
 		const res = await fetch(url + encodeURIComponent(word));
 		const json = await res.json();

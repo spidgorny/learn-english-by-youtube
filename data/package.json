@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "localstorage-cache": "^1.0.1"
+  }
+}

@@ -8,3 +8,5 @@ google
 python-dotenv
 redis
 makeyfile
+flask
+flask-cors

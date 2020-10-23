@@ -1,9 +1,10 @@
 import React from "react";
 import Tokenizer from "./Tokenizer";
+import Lyrics from "./Lyrics";
 
 const parser = require('xml2json-light');
 
-interface Transcript {
+export interface Transcript {
 	start: number | string;
 	dur: number | string;
 	'_@ttribute': string;
@@ -17,15 +18,10 @@ export default class FetchWords extends React.Component<any, any> {
 		error: undefined | string;
 		playTime: number;
 		transcript: Transcript[];
-		words: {
-			source: string;
-			translation: string;
-		}[],
 	} = {
 		error: undefined,
 		playTime: 0,
 		transcript: [],
-		words: [],
 	};
 
 	componentDidMount() {
@@ -75,23 +71,18 @@ export default class FetchWords extends React.Component<any, any> {
 	}
 
 	render() {
-		let message = this.state.transcript.find((el: Transcript) => {
-			let start = parseFloat(el.start.toString());
-			let dur = parseFloat(el.dur.toString());
-			return start < this.state.playTime
-				&& (start + dur) > this.state.playTime;
-		});
-		return (
-			<div><p className="lead">
-				{message ? message['_@ttribute'] : '...'}
+		if (this.state.error) {
+			return <div className="alert alert-danger">
+				{this.state.error}
+			</div>;
+		}
+
+		return (<>
+			<p className="lead">
+				YouTube ID: {this.props.youtubeID}
 			</p>
-				<p className="lead">
-					YouTube ID: {this.props.youtubeID}
-				</p>
-				<p className="lead">
-					Play Time: {this.state.playTime}
-				</p>
-			</div>);
+			<Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>
+		</>);
 	}
 
 }
