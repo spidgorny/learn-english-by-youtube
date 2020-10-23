@@ -1,6 +1,7 @@
 import React from "react";
 import {Transcript} from "./FetchWords";
 import Tokenizer, {progress} from "./Tokenizer";
+import Karaoke from "./Karaoke";
 
 interface LyricsProps {
 	transcript: Transcript[];
@@ -9,17 +10,14 @@ interface LyricsProps {
 
 interface State {
 	progress: number;
-	words: {
-		source: string;
-		translation: string;
-	}[];
+	translations: Record<string, string>;
 }
 
 export default class Lyrics extends React.Component<LyricsProps, any> {
 
 	state: State = {
 		progress: 0,
-		words: []
+		translations: {},
 	};
 
 	componentDidMount() {
@@ -45,30 +43,44 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 				progress: percent,
 			});
 		});
+
+		const translations: Record<string, string> = {};
+		results.map((el: any, index: number) => {
+			// console.log(el);
+			if (!el) {
+				return;
+			}
+			console.log(el);
+			const word: string = words[index];
+			translations[word] = el;
+		});
+		console.log(translations);
+
 		this.setState({
-			words: results,
+			words: translations,
 		});
 	}
 
 	render() {
-		let message = this.props.transcript.find((el: Transcript) => {
-			let start = parseFloat(el.start.toString());
-			let dur = parseFloat(el.dur.toString());
-			return start < this.props.playTime
-				&& (start + dur) > this.props.playTime;
-		});
 		if (this.state.progress < 100) {
 			return <progress max={100} value={this.state.progress} style={{
 				width: '100%'
 			}}/>;
 		}
 		return (
-			<div><p className="lead">
-				{message ? message['_@ttribute'] : '...'}
-			</p>
-				<p className="lead">
-					Play Time: {this.props.playTime}
-				</p>
+			<div style={{
+				position: 'absolute',
+				top: 0,
+				left: 0,
+				right: 0,
+				bottom: 0,
+			}}>
+				<Karaoke playTime={this.props.playTime}
+								 translations={this.state.translations}
+								 transcript={this.props.transcript}/>
+				{/*<p className="lead">*/}
+				{/*	Play Time: {this.props.playTime}*/}
+				{/*</p>*/}
 			</div>);
 	}
 

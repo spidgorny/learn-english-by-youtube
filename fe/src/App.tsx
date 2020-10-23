@@ -60,7 +60,7 @@ export default class App extends React.Component {
 			// @ts-ignore
 			let playing = YT.PlayerState.PLAYING;
 			if (event.data === playing && !done) {
-				setTimeout(stopVideo, 16000);
+				setTimeout(stopVideo, 60000);
 				done = true;
 			}
 		}
@@ -104,6 +104,7 @@ export default class App extends React.Component {
 					</div>
 					<div className="" style={{
 						flexBasis: '25%',
+						overflow: 'hidden',
 					}}>
 						<FetchWords youtubeID={this.youtubeID} player={this.state.player}/>
 					</div>

@@ -59,10 +59,10 @@ export default class FetchWords extends React.Component<any, any> {
 		this.setState({
 			transcript: json.transcript.text,
 		});
-		this.tokenize(json.transcript.text);
+		this.tokenizeText(json.transcript.text);
 	}
 
-	async tokenize(text: Transcript[]) {
+	async tokenizeText(text: Transcript[]) {
 		const t = new Tokenizer(text.map(line => line['_@ttribute']));
 		const terms = await t.getTerms();
 		this.setState({
@@ -77,12 +77,14 @@ export default class FetchWords extends React.Component<any, any> {
 			</div>;
 		}
 
-		return (<>
-			<p className="lead">
-				YouTube ID: {this.props.youtubeID}
-			</p>
+		return (<div style={{
+			position: 'relative',
+		}}>
+			{/*<p className="lead">*/}
+			{/*	YouTube ID: {this.props.youtubeID}*/}
+			{/*</p>*/}
 			<Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>
-		</>);
+		</div>);
 	}
 
 }

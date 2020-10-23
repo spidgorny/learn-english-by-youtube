@@ -3,7 +3,6 @@ import * as _ from 'lodash';
 import LocalStorageCache from 'localstorage-cache';
 
 const words5000 = require(__dirname + '/5000words');
-
 const natural = require('natural');
 
 export async function progress(iterable: Promise<any>[], onprogress: Function) {
@@ -54,9 +53,9 @@ export default class Tokenizer {
 		this.cache = new LocalStorageCache(2 * 1024, 'LRU');
 	}
 
-	getTerms() {
+	getTerms(): string[] {
 		const tokenizer = new natural.WordTokenizer();
-		const splitSent = this.sentences.map(line => tokenizer.tokenize(line));
+		const splitSent = this.sentences.map(line => tokenizer.tokenize(line.replaceAll(/\n/g, ' ')));
 		const words = splitSent.flat();
 		const uniq = _.uniq(words);
 		// const stems = uniq.map((word: string) => natural.PorterStemmer.stem(word));
