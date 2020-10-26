@@ -23,7 +23,9 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"runTokenizer": "ts-node-dev test/runTokenizer.ts",
-		"runServer": "cd .. && python src/pons_server.py"
+		"runServer": "cd .. && python src/pons_server.py",
+		"rebrow": "docker run --rm -ti -p 5001:5001 --link myredis:myredis marian/rebrow",
+		"commander": "docker run --rm --name redis-commander -d -p 8081:8081 rediscommander/redis-commander:latest"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

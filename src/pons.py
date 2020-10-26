@@ -1,8 +1,6 @@
 from dotenv import load_dotenv
 import os
 import redis
-import binascii
-import textwrap
 import sys
 
 from src.ml_stripper import strip_tags

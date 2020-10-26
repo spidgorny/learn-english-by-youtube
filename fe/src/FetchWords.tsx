@@ -1,5 +1,5 @@
 import React from "react";
-import Tokenizer from "./Tokenizer";
+import MyTokenizer from "./MyTokenizer";
 import Lyrics from "./Lyrics";
 import * as _ from 'lodash';
 
@@ -54,15 +54,22 @@ export default class FetchWords extends React.Component<any, any> {
 				error: res.statusText,
 			});
 		}
-		const xml = await res.text();
+		let xml = await res.text();
+		// \n will be eaten by xml2json, need to fix in advance
+		xml = xml.replaceAll(/\n/g, ' ');
 		// console.log(xml);
 		const json = parser.xml2json(xml);
 		const sentences = json.transcript.text.map((line: Transcript) => {
-			line['_@ttribute'] = line['_@ttribute'].replaceAll('\\n', ' ')
+			let text = line['_@ttribute'];
+			text = text.replaceAll(/\n/g, ' ')
 				.replaceAll('&amp;', '&')
 				.replaceAll('&gt;', '>')
 				.replaceAll('&lt;', '<');
-			line['_@ttribute'] = _.unescape(line['_@ttribute']);
+			text = _.unescape(text);
+			if (text.startsWith('Welcome')) {
+				console.log(line['_@ttribute'], '=>', text);
+			}
+			line['_@ttribute'] = text;
 			return line;
 		});
 		this.setState({
@@ -72,7 +79,7 @@ export default class FetchWords extends React.Component<any, any> {
 	}
 
 	async tokenizeText(text: Transcript[]) {
-		const t = new Tokenizer(text.map(line => line['_@ttribute']));
+		const t = new MyTokenizer(text.map(line => line['_@ttribute']));
 		const terms = await t.getTerms();
 		this.setState({
 			words: terms,
@@ -86,12 +93,7 @@ export default class FetchWords extends React.Component<any, any> {
 			</div>;
 		}
 
-		return <div>
-			{/*<p className="lead">*/}
-			{/*	YouTube ID: {this.props.youtubeID}*/}
-			{/*</p>*/}
-			<Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>
-		</div>;
+		return <Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>;
 	}
 
 }

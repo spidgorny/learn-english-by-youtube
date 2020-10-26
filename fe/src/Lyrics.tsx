@@ -1,6 +1,6 @@
 import React from "react";
 import {Transcript} from "./FetchWords";
-import Tokenizer, {progress} from "./Tokenizer";
+import MyTokenizer, {progress} from "./MyTokenizer";
 import Karaoke from "./Karaoke";
 
 interface LyricsProps {
@@ -34,7 +34,7 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 	}
 
 	async tokenizeAndTranslate() {
-		const t = new Tokenizer(this.props.transcript.map((el: Transcript) => el["_@ttribute"]));
+		const t = new MyTokenizer(this.props.transcript.map((el: Transcript) => el["_@ttribute"]));
 		const words = t.getTerms();
 		const results = await progress(t.translate(words), (progress: ProgressEvent) => {
 			// console.log(progress.loaded, '/', progress.total);
@@ -54,7 +54,7 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 			const word: string = words[index];
 			translations[word] = el;
 		});
-		// console.log(translations);
+		// console.log('setState', 'translations', translations);
 
 		this.setState({
 			translations,
@@ -65,12 +65,13 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 		// console.log('Lyrics progress', this.state.progress);
 		if (this.state.progress < 100) {
 			return <div>
-				<p>Loading translations for {this.state.translations.length} words...</p>
+				<p>Loading translations for {Object.keys(this.state.translations).length} words...</p>
 				<progress max={100} value={this.state.progress} style={{
 					width: '100%'
 				}}/>
 			</div>;
 		}
+		console.log('Lyrics.render', Object.keys(this.state.translations).length);
 		return <Karaoke playTime={this.props.playTime}
 										translations={this.state.translations}
 										transcript={this.props.transcript}/>;

@@ -45,7 +45,7 @@ export function wrapCache(cache: LocalStorageCache, key: string, otherwise: Func
 	return value;
 }
 
-export default class Tokenizer {
+export default class MyTokenizer {
 
 	cache: LocalStorageCache;
 

@@ -16,28 +16,40 @@ interface KaraokeProps {
 	transcript: Transcript[];
 }
 
-export default class Karaoke extends React.Component<KaraokeProps, any> {
+interface State {
+	messages: TranscriptTranslated[];
+}
 
-	state: {
-		messages: TranscriptTranslated[];
-	} = {
+export default class Karaoke extends React.Component<KaraokeProps, State> {
+
+	state: State = {
 		messages: [],
 	};
 
 	scrollRef = React.createRef<HTMLDivElement>();
 
+	get transLen() {
+		return Object.keys(this.props.translations).length;
+	}
+
 	componentDidMount() {
-		if (this.props.transcript && this.props.translations) {
-			this.translateTranscript();
-		}
+		console.log('Karaoke.cdm', this.props.transcript.length, this.transLen);
+		this.maybeTranslate();
 	}
 
 	componentDidUpdate(prevProps: Readonly<KaraokeProps>, prevState: Readonly<any>, snapshot?: any) {
-		console.log('Karaoke.cdu', this.props.transcript.length, this.props.translations.length);
+		console.log('Karaoke.cdu', this.props.transcript.length, this.transLen);
+		this.maybeTranslate();
+		this.scrollToBottom();
+	}
+
+	maybeTranslate() {
+		console.log('messages', this.state.messages.length);
+		// already translated
 		if (this.state.messages.length) {
 			return;
 		}
-		if (this.props.transcript && this.props.translations) {
+		if (this.props.transcript.length && this.transLen) {
 			this.translateTranscript();
 		}
 	}
@@ -52,7 +64,7 @@ export default class Karaoke extends React.Component<KaraokeProps, any> {
 			const text = el["_@ttribute"];
 
 			const tokenizer = new natural.WordTokenizer();
-			const words1 = tokenizer.tokenize(text.replaceAll(/\n/g, ' '));
+			const words1 = tokenizer.tokenize(text);
 			const wordsWithTrans = words1.map((word: string) => {
 				const trans = this.props.translations[word] as string;
 				if (trans) {
@@ -66,9 +78,11 @@ export default class Karaoke extends React.Component<KaraokeProps, any> {
 		});
 
 		this.setState({
-			olderMessages,
+			messages: olderMessages,
 		});
+	}
 
+	scrollToBottom() {
 		if (!this.scrollRef.current) {
 			return;
 		}
@@ -86,6 +100,7 @@ export default class Karaoke extends React.Component<KaraokeProps, any> {
 		return <div style={{
 			position: 'relative',
 			backgroundColor: 'yellow',
+			height: '100%',
 		}}>
 			<div style={{
 				position: 'absolute',

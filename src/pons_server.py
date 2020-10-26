@@ -4,6 +4,10 @@ import redis
 from pons_trans import PonsTrans
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
+import pprint
+
+load_dotenv()
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -11,6 +15,8 @@ CORS(app, resources={
     r"/pons": {"origins": "http://localhost:3000"}
 })
 
+if not os.getenv('REDIS'):
+    raise EnvironmentError('REDIS not configured in .env')
 r = redis.Redis(host=os.getenv('REDIS'), port=6379, db=0)
 
 
@@ -28,7 +34,7 @@ def pons():
     if 'word' not in request.args:
         return jsonify({
             'status': "error",
-            'error': "Error: No id field provided. Please specify an id."
+            'error': "Error: No word field provided. Please specify an id."
         })
     word = request.args['word']
     p = PonsTrans(r)

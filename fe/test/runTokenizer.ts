@@ -1,4 +1,4 @@
-import Tokenizer from "../src/Tokenizer";
+import MyTokenizer from "../src/MyTokenizer";
 import * as fs from "fs";
 // const parser = require('xml2json-light');
 
@@ -11,7 +11,7 @@ const json = JSON.parse(data);
 const sentences = json.events.map((el: any) => ('segs' in el && el.segs.length) ? el.segs[0].utf8 : null)
 	.filter((el: string) => el);
 // console.log(sentences);
-const t = new Tokenizer(sentences);
+const t = new MyTokenizer(sentences);
 const terms = t.getTerms();
 console.log(terms);
 
