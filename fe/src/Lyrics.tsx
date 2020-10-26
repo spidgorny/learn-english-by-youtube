@@ -45,43 +45,35 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 		});
 
 		const translations: Record<string, string> = {};
-		results.map((el: any, index: number) => {
+		results.forEach((el: any, index: number) => {
 			// console.log(el);
 			if (!el) {
 				return;
 			}
-			console.log(el);
+			// console.log(el);
 			const word: string = words[index];
 			translations[word] = el;
 		});
-		console.log(translations);
+		// console.log(translations);
 
 		this.setState({
-			words: translations,
+			translations,
 		});
 	}
 
 	render() {
+		// console.log('Lyrics progress', this.state.progress);
 		if (this.state.progress < 100) {
-			return <progress max={100} value={this.state.progress} style={{
-				width: '100%'
-			}}/>;
+			return <div>
+				<p>Loading translations for {this.state.translations.length} words...</p>
+				<progress max={100} value={this.state.progress} style={{
+					width: '100%'
+				}}/>
+			</div>;
 		}
-		return (
-			<div style={{
-				position: 'absolute',
-				top: 0,
-				left: 0,
-				right: 0,
-				bottom: 0,
-			}}>
-				<Karaoke playTime={this.props.playTime}
-								 translations={this.state.translations}
-								 transcript={this.props.transcript}/>
-				{/*<p className="lead">*/}
-				{/*	Play Time: {this.props.playTime}*/}
-				{/*</p>*/}
-			</div>);
+		return <Karaoke playTime={this.props.playTime}
+										translations={this.state.translations}
+										transcript={this.props.transcript}/>;
 	}
 
 }

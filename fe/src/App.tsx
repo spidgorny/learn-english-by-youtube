@@ -20,7 +20,7 @@ export default class App extends React.Component {
 	}
 
 	componentDidMount() {
-		this.initPlayer();
+		//this.initPlayer();
 	}
 
 	initPlayer() {
@@ -71,18 +71,17 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		return (
-			<>
-				<header className="masthead">
-					<div className="inner">
-						<h3 className="masthead-brand">Cover</h3>
-						<form style={{display: 'inline'}}>
-							<input type="search" name="youtube_url" ref={this.refURL} onInput={this.enterNewURL.bind(this)}
-										 className="form-control" style={{
-								display: 'inline',
-								width: '50%'
-							}}/>
-						</form>
+		return <>
+			<header className="masthead">
+				<div className="inner">
+					<h3 className="masthead-brand">Cover</h3>
+					<form style={{display: 'inline'}}>
+						<input type="search" name="youtube_url" ref={this.refURL} onInput={this.enterNewURL.bind(this)}
+									 className="form-control" style={{
+							display: 'inline',
+							width: '50%'
+						}}/>
+					</form>
 						<nav className="nav nav-masthead justify-content-center">
 							<a className="nav-link active" href=".">Home</a>
 							<a className="nav-link" href="/contact">Contact</a>
@@ -105,12 +104,12 @@ export default class App extends React.Component {
 					<div className="" style={{
 						flexBasis: '25%',
 						overflow: 'hidden',
+						backgroundColor: 'silver',
 					}}>
 						<FetchWords youtubeID={this.youtubeID} player={this.state.player}/>
 					</div>
 				</main>
-			</>
-		);
+		</>;
 	}
 
 	enterNewURL() {

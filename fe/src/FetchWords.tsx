@@ -1,6 +1,7 @@
 import React from "react";
 import Tokenizer from "./Tokenizer";
 import Lyrics from "./Lyrics";
+import * as _ from 'lodash';
 
 const parser = require('xml2json-light');
 
@@ -20,7 +21,7 @@ export default class FetchWords extends React.Component<any, any> {
 		transcript: Transcript[];
 	} = {
 		error: undefined,
-		playTime: 0,
+		playTime: 20,
 		transcript: [],
 	};
 
@@ -56,8 +57,16 @@ export default class FetchWords extends React.Component<any, any> {
 		const xml = await res.text();
 		// console.log(xml);
 		const json = parser.xml2json(xml);
+		const sentences = json.transcript.text.map((line: Transcript) => {
+			line['_@ttribute'] = line['_@ttribute'].replaceAll('\\n', ' ')
+				.replaceAll('&amp;', '&')
+				.replaceAll('&gt;', '>')
+				.replaceAll('&lt;', '<');
+			line['_@ttribute'] = _.unescape(line['_@ttribute']);
+			return line;
+		});
 		this.setState({
-			transcript: json.transcript.text,
+			transcript: sentences,
 		});
 		this.tokenizeText(json.transcript.text);
 	}
@@ -77,14 +86,12 @@ export default class FetchWords extends React.Component<any, any> {
 			</div>;
 		}
 
-		return (<div style={{
-			position: 'relative',
-		}}>
+		return <div>
 			{/*<p className="lead">*/}
 			{/*	YouTube ID: {this.props.youtubeID}*/}
 			{/*</p>*/}
 			<Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>
-		</div>);
+		</div>;
 	}
 
 }
