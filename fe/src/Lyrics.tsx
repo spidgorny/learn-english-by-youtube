@@ -74,7 +74,8 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 		console.log('Lyrics.render', Object.keys(this.state.translations).length);
 		return <Karaoke playTime={this.props.playTime}
 										translations={this.state.translations}
-										transcript={this.props.transcript}/>;
+										transcript={this.props.transcript}
+										debug={false}/>;
 	}
 
 }

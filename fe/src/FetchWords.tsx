@@ -11,39 +11,25 @@ export interface Transcript {
 	'_@ttribute': string;
 }
 
-export default class FetchWords extends React.Component<any, any> {
+interface Props {
+	youtubeID: string;
+	playTime: number;
+}
 
-	timer: any;
+interface State {
+	error: undefined | string;
+	transcript: Transcript[];
+}
 
-	state: {
-		error: undefined | string;
-		playTime: number;
-		transcript: Transcript[];
-	} = {
+export default class FetchWords extends React.Component<Props, any> {
+
+	state: State = {
 		error: undefined,
-		playTime: 20,
 		transcript: [],
 	};
 
 	componentDidMount() {
-		this.timer = setInterval(this.updatePlayTime.bind(this), 100);
 		this.fetchCC();
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.timer);
-	}
-
-	updatePlayTime() {
-		if (!this.props.player) {
-			return;
-		}
-		if (!('getCurrentTime' in this.props.player)) {
-			return;
-		}
-		this.setState({
-			playTime: this.props.player.getCurrentTime(),
-		});
 	}
 
 	async fetchCC() {
@@ -93,7 +79,8 @@ export default class FetchWords extends React.Component<any, any> {
 			</div>;
 		}
 
-		return <Lyrics transcript={this.state.transcript} playTime={this.state.playTime}/>;
+		return <Lyrics transcript={this.state.transcript}
+									 playTime={this.props.playTime}/>;
 	}
 
 }
