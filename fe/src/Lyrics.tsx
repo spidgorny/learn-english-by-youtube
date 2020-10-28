@@ -64,14 +64,14 @@ export default class Lyrics extends React.Component<LyricsProps, any> {
 	render() {
 		// console.log('Lyrics progress', this.state.progress);
 		if (this.state.progress < 100) {
-			return <div>
+			return <div style={{padding: '0.5em'}}>
 				<p>Loading translations for {Object.keys(this.state.translations).length} words...</p>
 				<progress max={100} value={this.state.progress} style={{
 					width: '100%'
 				}}/>
 			</div>;
 		}
-		console.log('Lyrics.render', Object.keys(this.state.translations).length);
+		// console.log('Lyrics.render', Object.keys(this.state.translations).length);
 		return <Karaoke playTime={this.props.playTime}
 										translations={this.state.translations}
 										transcript={this.props.transcript}

@@ -61,43 +61,36 @@ export default class App extends React.Component<AppProps> {
 		firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
 
 		const onYouTubeIframeAPIReady = () => {
-			// @ts-ignore
-			const player = new YT.Player('player', {
-				videoId: this.youtubeID,
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-			this.setState({
-				player,
-			});
+			this.startPlaying();
 		}
 		// @ts-ignore
 		window['onYouTubeIframeAPIReady'] = onYouTubeIframeAPIReady.bind(this);
+	}
 
-		// 4. The API will call this function when the video player is ready.
-		function onPlayerReady(event: any) {
-			event.target.playVideo();
-		}
-
-		// 5. The API calls this function when the player's state changes.
-		//    The function indicates that when playing a video (state=1),
-		//    the player should play for six seconds and then stop.
-		let done = false;
-
-		function onPlayerStateChange(event: any) {
-			// @ts-ignore
-			let playing = YT.PlayerState.PLAYING;
-			if (event.data === playing && !done) {
-				setTimeout(stopVideo, 60000);
-				done = true;
+	startPlaying() {
+		console.log('startPlaying', this.youtubeID);
+		// @ts-ignore;
+		const player = new YT.Player('player', {
+			videoId: this.youtubeID,
+			events: {
+				'onReady': this.onPlayerReady.bind(this),
+				'onStateChange': this.onPlayerStateChange.bind(this),
 			}
-		}
+		});
+		this.setState({
+			player,
+		});
+	}
 
-		const stopVideo = () => {
-			this.state.player.stopVideo();
-		}
+	onPlayerReady(event: any) {
+		event.target.playVideo();
+	}
+
+	onPlayerStateChange(event: any) {
+	}
+
+	stopVideo() {
+		this.state.player.stopVideo();
 	}
 
 	render() {
@@ -105,10 +98,10 @@ export default class App extends React.Component<AppProps> {
 			<header className="masthead">
 				<div className="row">
 					<h3 className="col masthead-brand">Cover</h3>
-					<form style={{display: 'inline'}} className="col-6">
+					<form style={{display: 'inline'}} className="col-6"
+								onSubmit={this.enterNewURL.bind(this)}>
 						<input type="search" name="youtube_url"
 									 ref={this.refURL}
-									 onInput={this.enterNewURL.bind(this)}
 									 placeholder="paste youtube URL here"
 									 className="form-control" style={{
 							width: '100%'
@@ -134,19 +127,24 @@ export default class App extends React.Component<AppProps> {
 						aspectRatio: '16/9',
 						backgroundColor: 'black',
 					}}>
-						<input type="range" min={0} max={6000} onChange={this.dragPlayTime.bind(this)} value={this.state.playTime}
-									 style={{
+						{this.props.debug &&
+			<input type="range" min={0} max={600}
+				   onChange={this.dragPlayTime.bind(this)}
+				   value={this.state.playTime}
+				   style={{
 										 width: '100%',
 									 }}/>
+						}
 					</div>
 				</div>
 				<div className="" style={{
 					flexBasis: '25%',
 					overflow: 'hidden',
-					backgroundColor: 'silver',
+					backgroundColor: 'gray',
 				}}>
 					<FetchWords youtubeID={this.youtubeID}
-											playTime={this.state.playTime}/>
+											playTime={this.state.playTime}
+											key={this.youtubeID}/>
 				</div>
 			</main>
 		</>;
@@ -167,11 +165,15 @@ export default class App extends React.Component<AppProps> {
 		if (!e.target) {
 			return;
 		}
-		let input = e.target as HTMLInputElement;
-		console.log(input.value)
+		this.state.player.stopVideo();
+		let form = e.target as HTMLFormElement;
+		let input = form.elements[0] as HTMLInputElement;
+		console.log(input.value);
 		this.setState({
 			youtubeURL: input.value,
-		})
+		}, () => {
+			this.state.player.loadVideoById(this.youtubeID);
+		});
 	}
 
 }

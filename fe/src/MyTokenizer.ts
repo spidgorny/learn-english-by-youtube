@@ -55,7 +55,7 @@ export default class MyTokenizer {
 
 	getTerms(): string[] {
 		const tokenizer = new natural.WordTokenizer();
-		const splitSent = this.sentences.map(line => tokenizer.tokenize(line.replaceAll(/\n/g, ' ')));
+		const splitSent = this.sentences.map(line => tokenizer.tokenize((line ?? '').replaceAll(/\n/g, ' ')));
 		const words = splitSent.flat();
 		const uniq = _.uniq(words);
 		// const stems = uniq.map((word: string) => natural.PorterStemmer.stem(word));

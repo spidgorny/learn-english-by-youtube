@@ -45,7 +45,8 @@ export default class FetchWords extends React.Component<Props, any> {
 		xml = xml.replaceAll(/\n/g, ' ');
 		// console.log(xml);
 		const json = parser.xml2json(xml);
-		const sentences = json.transcript.text.map((line: Transcript) => {
+		const messages = json.transcript.text.filter((el: Transcript) => '_@ttribute' in el);
+		const sentences = messages.map((line: Transcript) => {
 			let text = line['_@ttribute'];
 			text = text.replaceAll(/\n/g, ' ')
 				.replaceAll('&amp;', '&')
