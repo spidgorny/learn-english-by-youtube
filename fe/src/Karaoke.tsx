@@ -117,25 +117,24 @@ export default class Karaoke extends React.Component<KaraokeProps, State> {
 	}
 
 	translateTranscript() {
-		// console.log('translateTranscript');
+		console.log('translateTranscript', this.props.transcript.length, this.transLen);
 		const olderMessages = this.props.transcript.map((el: Transcript) => {
 			let start = parseFloat(el.start.toString());
 			let dur = parseFloat(el.dur.toString());
 			// return start < this.props.playTime
 			// 	&& (start + dur) > this.props.playTime;
-			const text = el["_@ttribute"];
+			let text = el["_@ttribute"];
 
 			const tokenizer = new natural.WordTokenizer();
 			const words1 = tokenizer.tokenize(text);
-			const wordsWithTrans = words1.map((word: string) => {
+			words1.forEach((word: string) => {
 				const trans = this.props.translations[word] as string;
 				if (trans) {
-					word += ' [' + trans + ']';
+					text = text.replaceAll(word, word + ' [' + trans + ']');
 				}
-				return word;
 			});
 			return {
-				start, dur, text, wordsWithTrans,
+				start, dur, text,
 			} as TranscriptTranslated;
 		});
 
@@ -151,7 +150,8 @@ export default class Karaoke extends React.Component<KaraokeProps, State> {
 		// console.log('olderMessages', '<', this.props.playTime, olderMessages.length);
 		const messages = olderMessages.map((line: TranscriptTranslated) =>
 			<p key={line.start}>
-				{line.start.toFixed(2)}: {line.text}
+				{line.start.toFixed(2)}:
+				<span dangerouslySetInnerHTML={{__html: line.text}}/>
 			</p>);
 		return <div style={{
 			position: 'relative',

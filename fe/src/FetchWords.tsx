@@ -53,9 +53,9 @@ export default class FetchWords extends React.Component<Props, any> {
 				.replaceAll('&gt;', '>')
 				.replaceAll('&lt;', '<');
 			text = _.unescape(text);
-			if (text.startsWith('Welcome')) {
-				console.log(line['_@ttribute'], '=>', text);
-			}
+			// if (text.startsWith('Welcome')) {
+			// 	console.log(line['_@ttribute'], '=>', text);
+			// }
 			line['_@ttribute'] = text;
 			return line;
 		});
@@ -74,14 +74,18 @@ export default class FetchWords extends React.Component<Props, any> {
 	}
 
 	render() {
+		let error = <></>;
 		if (this.state.error) {
-			return <div className="alert alert-danger">
+			error = <div className="alert alert-danger">
 				{this.state.error}
 			</div>;
 		}
 
 		return <Lyrics transcript={this.state.transcript}
-									 playTime={this.props.playTime}/>;
+									 playTime={this.props.playTime}>
+			{error}
+			{this.props.children}
+		</Lyrics>;
 	}
 
 }

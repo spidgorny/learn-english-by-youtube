@@ -31,7 +31,6 @@ export default class App extends React.Component<AppProps> {
 	}
 
 	componentDidMount() {
-		this.timer = setInterval(this.updatePlayTime.bind(this), 100);
 		if (!this.props.debug) {
 			this.initPlayer();
 		}
@@ -50,6 +49,14 @@ export default class App extends React.Component<AppProps> {
 	}
 
 	componentWillUnmount() {
+		this.unwatch();
+	}
+
+	watch() {
+		this.timer = setInterval(this.updatePlayTime.bind(this), 100);
+	}
+
+	unwatch() {
 		clearInterval(this.timer);
 	}
 
@@ -68,7 +75,7 @@ export default class App extends React.Component<AppProps> {
 	}
 
 	startPlaying() {
-		console.log('startPlaying', this.youtubeID);
+		// console.log('startPlaying', this.youtubeID);
 		// @ts-ignore;
 		const player = new YT.Player('player', {
 			videoId: this.youtubeID,
@@ -87,6 +94,14 @@ export default class App extends React.Component<AppProps> {
 	}
 
 	onPlayerStateChange(event: any) {
+		// @ts-ignore
+		const PLAYING = YT.PlayerState.PLAYING;
+		console.log(event);
+		if (event.data === PLAYING) {
+			this.watch();
+		} else {
+			this.unwatch();
+		}
 	}
 
 	stopVideo() {
@@ -115,18 +130,19 @@ export default class App extends React.Component<AppProps> {
 					</div>
 				</div>
 			</header>
-			<main role="main" className="d-flex flex-row justify-content-between" style={{
-				gap: '1em',
-			}}>
-				<div className="" style={{
-					flexBasis: '75%',
-				}}>
+			<main role="main">
+				<FetchWords youtubeID={this.youtubeID}
+										playTime={this.state.playTime}
+										key={this.youtubeID}>
+
 					<div className="" id="player" style={{
 						width: '100%',
 						height: 'calc(100vw * 9 / 16)',
 						aspectRatio: '16/9',
 						backgroundColor: 'black',
-					}}>
+					}}
+							 key={'staticPlayerKey'}
+					>
 						{this.props.debug &&
 			<input type="range" min={0} max={600}
 				   onChange={this.dragPlayTime.bind(this)}
@@ -136,16 +152,8 @@ export default class App extends React.Component<AppProps> {
 									 }}/>
 						}
 					</div>
-				</div>
-				<div className="" style={{
-					flexBasis: '25%',
-					overflow: 'hidden',
-					backgroundColor: 'gray',
-				}}>
-					<FetchWords youtubeID={this.youtubeID}
-											playTime={this.state.playTime}
-											key={this.youtubeID}/>
-				</div>
+
+				</FetchWords>
 			</main>
 		</>;
 	}
@@ -168,11 +176,13 @@ export default class App extends React.Component<AppProps> {
 		this.state.player.stopVideo();
 		let form = e.target as HTMLFormElement;
 		let input = form.elements[0] as HTMLInputElement;
-		console.log(input.value);
+		// console.log(input.value);
 		this.setState({
 			youtubeURL: input.value,
 		}, () => {
-			this.state.player.loadVideoById(this.youtubeID);
+			// this.state.player.loadVideoById(this.youtubeID);
+			// this.state.player.startPlaying();
+			this.startPlaying();
 		});
 	}
 

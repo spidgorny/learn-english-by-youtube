@@ -60,7 +60,11 @@ export default class MyTokenizer {
 		const uniq = _.uniq(words);
 		// const stems = uniq.map((word: string) => natural.PorterStemmer.stem(word));
 		// const uStems = _.uniq(stems)
+
+		// remove simple words from 5000 words list
 		const special = uniq.filter((word: string) => !words5000.includes(word.toLowerCase()));
+
+		// remove short words with 2 characters
 		const moreThanOneChar = special.filter((word: string) => word.length > 2);
 		return moreThanOneChar;
 	}
@@ -75,7 +79,10 @@ export default class MyTokenizer {
 	}
 
 	async fetchOneWord(word: string): Promise<string> {
-		const url = 'http://127.0.0.1:5000/pons?word=';
+		const url = process.env.REACT_APP_TRANSAPI;
+		if (!url) {
+			return '';
+		}
 		const res = await fetch(url + encodeURIComponent(word));
 		const json = await res.json();
 		return json.trans;
